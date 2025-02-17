@@ -4,7 +4,7 @@ Tekton to wszechstrony, natywny dla Kubernetes framework do tworzenia systemów 
 
 ## Wymagania wstępne
 
-Aby wykonać laboratorium, nalezy:
+Aby wykonać laboratorium, należy:
 1. Zainstalować klienta `oc` - [Instrukcja](https://docs.openshift.com/container-platform/4.16/cli_reference/openshift_cli/getting-started-cli.html)
 2. Mieć dostęp do konsoli OCP - Dostęp dostarcza prowadzący.
 
@@ -23,10 +23,7 @@ W tym ćwiczeniu dowiesz się jak:
 Aby sworzyć Task, mozesz wykorzystać zarówno CLI jak i konsole OCP. W tym laboratorium przetestujesz obie opcje.
 
 1. Aby zalogować się do konsoli otwórz swoją ulubioną przeglądarkę i wkliej adres to konsoli OCP: `lab.ocp4.example.com`.
-
-SCREEN
-
-2. Kliknij `lab-htpasswd`, a nastepnie zaloguj się loginem i hasłem dostarczonym przez prowadzacych. Znajdujesz się w konsoli OCP. Upewnij się, ze jesteś w panelu administracyjnym.
+2. Kliknij `lab-htpasswd`, a nastepnie zaloguj się loginem i hasłem dostarczonym przez prowadzacych. Znajdujesz się w konsoli OCP. Upewnij się, że jesteś w panelu administracyjnym.
 3. Z panelu administratora rozwiń zakładkę `Pipelines`, a następnie kliknij `Tasks`.
 
 <img src="../images/Tkt_01.png" width="70%">
@@ -38,7 +35,7 @@ SCREEN
 
 6. Pojawi się okno, gdzie mozesz zdefiniować *Task*. Pierwszy Task, który stworzysz wykorzysta obraz Red Hat Universal Base Image i wykona komende `echo`, aby się "przywitać". Wklej następującą definicje do okna i kliknij `Create`.
 
-```
+```yaml
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
@@ -59,13 +56,13 @@ Przyjrzyj się definicji powyżej. Typ obiektu to `Task`. Dalej defniujesz nazw�
 
 ### Inicjalizacja Task'u.
 
-1. Aby zainicjalizować *Task*, nalezy stworzyć obiekt `TaskRun`. Kliknij `Creat`, a następnie `TaskRun`.
+1. Aby zainicjalizować *Task*, należy stworzyć obiekt `TaskRun`. Kliknij `Creat`, a następnie `TaskRun`.
 
 <img src="../images/Tkt_04.png" width="70%">
 
 2. Pojawi się okno, gdzie mozesz zdefiniować *TaskRun*. Skopiuj definicje ponizej i wklej do konsoli OCP.
 
-```
+```yaml
 apiVersion: tekton.dev/v1beta1
 kind: TaskRun
 metadata:
@@ -91,7 +88,7 @@ spec:
 1. Wróć do pulpitu `Tasks` i stwórz nowy *Task*, klikając `Create -> Task`.
 2. W oknie wklej następującą definicje zadania:
 
-```
+```yaml
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
@@ -111,12 +108,12 @@ spec:
 ```
 <img src="../images/Tkt_08.png" width="70%">
 
-Bazując na naszym przykładzie `witaj`, dodałeś parametr `osoba` z domyślną wartością. Aby uzyskać dostęp do nowego parametru, nalezy wywołać go za pomocą konstrukcji `$(params.osoba)`
+Bazując na naszym przykładzie `witaj`, dodałeś parametr `osoba` z domyślną wartością. Aby uzyskać dostęp do nowego parametru, należy wywołać go za pomocą konstrukcji `$(params.osoba)`
 
 3. Wróc do puplitu `Tasks` i stwórz `TaskRun`, aby wywołać *Task*. Kliknij `Creat`, a następnie `TaskRun`.
 4. Wklej definicje `TaskRun`:
 
-```
+```yaml
 apiVersion: tekton.dev/v1beta1
 kind: TaskRun
 metadata:
@@ -152,7 +149,7 @@ W tym ćwiczeniu dowiesz się jak:
 1. Stwórz folder roboczy `tekton-lab` na swojej stacji roboczej.
 1. Aby stworzyć Task z wykorzystaniem CLI w pierwszej kolejności musisz stworzyć plik `yaml` z definicją obiektu. Otwórz swój ulubiony edytor tekstu i wklej definicje `Tasku`:
 
-```
+```yaml
 apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
@@ -175,37 +172,37 @@ spec:
       args: ['-c', 'sleep $(params.stop) && echo $(params.powiedz) && echo']
 ```
 
-<img src="../images/Tkt_11.png" width="70%">
+<img src="../images/Tkt_19.png" width="70%">
 
 2. Przeanalizuj `Task` i zapisz go jako `rozmowa-task.yaml` w wybranym przez Ciebie folderze (`/<ściezka-do-TwójFolder>/tekton-lab`).
-3. Teraz musimsz zalogować się do klastra OCP korzystając z CLI. Wróć do konsoli OCP i rozwiń nazwę swojego uzytkownika, a następnie kliknij `Copy login command`.
+3. Teraz musimsz zalogować się do klastra OCP korzystając z CLI. Wróć do konsoli OCP i rozwiń nazwę swojego użytkownika, a następnie kliknij `Copy login command`.
 
-<img src="../images/Tkt_12.png" width="70%">
+<img src="../images/Tkt_11.png" width="70%">
 
 4. Kliknij `Display Token`. W nowym oknie pojawi się komenda do logowania do klastra z CLI. Skopiuj ją.
 
-<img src="../images/Tkt_13.png" width="70%">
+<img src="../images/Tkt_12.png" width="50%">
 
 5. Otwórz sesję terminala (`CMD`) na swojej stacji roboczej. 
 6. Zmień folder roboczy na folder, gdzie zapisałś plik `rozmowa-task.yaml`. (Win: `dir '/<ściezka-do-TwójFolder>/tekton-lab` , Linux: `cd /<ściezka-do-TwójFolder>/tekton-lab`).
 7. Wklej skopiowaną komendę logowania i kliknij `Enter`.
 
-<img src="../images/Tkt_14 .png" width="70%">
+<img src="../images/Tkt_13.png" width="50%">
 
 8. Zmień projekt na `tekton-lab-<TwojeID>` wpisując komendę: `oc project tekton-lab-<TwojeID>`
 
-<img src="../images/Tkt_15 .png" width="40%">
+<img src="../images/Tkt_14.png" width="50%">
 
 9. Aby stworzyć `Task` zaaplikuj plik `yaml` komendą: `oc apply -f rozmowa-task.yaml`
 
-<img src="../images/Tkt_16 .png" width="40%">
+<img src="../images/Tkt_15.png" width="40%">
 
 ### Stworzyć swój pierwsz Pipeline
 
 1. Ponownie otwórz swój ulubiony edytor i stwórz nowy plik o nazwie `rozmowa-pipeline.yaml`.
 2. Wklej definicje `Pipeline`: 
 
-```
+```yaml
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
@@ -240,18 +237,18 @@ spec:
         - zadanie-drugie
 ```
 
-Przyjrzyj się definicji powyżej. Typ obiektu to `Pipeline`. Dalej defniujesz nazwę, a następnie zadania (`Tasks`), które mają być wykonane. Dla poszczególnych zadań definiujesz nazwę zadania (`name`), parametry zadania (`params`) oraz definicje zadania (`taskRef`). Jeśli chcesz, aby zadania wykonywały się sekwencyjne nalezy dodać parametr `runAfter`, który definiuje po którym zadaniu ma się wykonać dany Task. Bez tego parametru zadania będą wykonywać się równolegle. 
+Przyjrzyj się definicji powyżej. Typ obiektu to `Pipeline`. Dalej defniujesz nazwę, a następnie zadania (`Tasks`), które mają być wykonane. Dla poszczególnych zadań definiujesz nazwę zadania (`name`), parametry zadania (`params`) oraz definicje zadania (`taskRef`). Jeśli chcesz, aby zadania wykonywały się sekwencyjne należy dodać parametr `runAfter`, który definiuje po którym zadaniu ma się wykonać dany Task. Bez tego parametru zadania będą wykonywać się równolegle. 
 
-<img src="../images/Tkt_17 .png" width="70%">
+<img src="../images/Tkt_20.png" width="70%">
 
 3. Aby stworzyć `Pipeline` zaaplikuj plik `yaml` komendą: `oc apply -f rozmowa-pipeline.yaml`
 
-<img src="../images/Tkt_18 .png" width="40%">
+<img src="../images/Tkt_16.png" width="40%">
 
-4. W następnym kroku nalezy stworzyć obiekt `PipelineRun`, który analogicznie jak `TaskRun` wykonuje `Pipeline`. Otwórz edytor i stwórz nowy plik o nazwie `rozmowa-pipeline-run.yaml`.
+4. W następnym kroku należy stworzyć obiekt `PipelineRun`, który analogicznie jak `TaskRun` wykonuje `Pipeline`. Otwórz edytor i stwórz nowy plik o nazwie `rozmowa-pipeline-run.yaml`.
 5. Wklej definicje `PipelineRun`:
 
-```
+```yaml
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
@@ -261,19 +258,19 @@ spec:
     name: rozmowa-zadan
 ```
 
-<img src="../images/Tkt_19 .png" width="70%">
+<img src="../images/Tkt_17.png" width="70%">
 
 6. Aby uruchomić `Pipeline` zaaplikuj plik `rozmowa-pipeline-run.yaml` komendą: `oc apply -f rozmowa-pipeline-run.yaml`
 
-<img src="../images/Tkt_20 .png" width="40%">
+<img src="../images/Tkt_18.png" width="40%">
 
 7. Aby sprawdzić logi wykonanego Pipeline'u wróć do konsoli OCP i przejdź do pulpitu `Pipelines` i kliknij `rozmowa-zadan-run`.
 
-<img src="../images/Tkt_21 .png" width="70%">
+<img src="../images/Tkt_21.png" width="70%">
 
 8. Wszystkie zadania wtkonały w odpowiedniej sekwencji i zakończyły sukcesem. Przejdź do zakładki `Logs`.
 
-<img src="../images/Tkt_22 .png" width="70%">
+<img src="../images/Tkt_22.png" width="70%">
 
 9. Przejrzyj wykonanie poszczególnych zadań.
 
