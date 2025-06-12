@@ -1,39 +1,84 @@
 # Wstęp do Tektona
 
-Tekton to wszechstrony, natywny dla Kubernetes framework do tworzenia systemów ciągłej integracji i dostarczania (CI/CD). W tym laboratorium dowiesz się w praktyczne, czym jest *Task*, *Pipeline* oraz *Trigger*.
+Tekton to wszechstronne, natywne dla Kubernetes narzędzie do tworzenia systemów ciągłej integracji i dostarczania (CI/CD). Na tym warsztacie, dowiesz się, jak:
+- zainstalować Tekton (Pipelines) na OpenShift, 
+- tworzyć Zadania (**Tasks**),
+-  a ostatecznie zbudować własny **Pipeline**.
 
 ## Wymagania wstępne
 
 Aby wykonać laboratorium, należy:
-1. Zainstalować klienta `oc` - [Instrukcja](https://docs.openshift.com/container-platform/4.16/cli_reference/openshift_cli/getting-started-cli.html)
-2. Mieć dostęp do konsoli OCP - Dostęp dostarcza prowadzący.
+
+1. Mieć dostęp do środowiska laboratoryjnego z OCP - Instrukcje dostarcza prowadzący.
 
 ## Tasks - Wstęp
 
 W tym ćwiczeniu dowiesz się jak:
 
-1. Stworzyć swój pierwsz *Task* w konsoli OCP.
-2. Zainicjować i uruchmomić *Task* z wykorzystniem `TaskRun`.
-2. Dodać parametr do *Task*.
+1. Zainstalować Tektona z wykorzystaniem operatora.
+2. Stworzyć swój pierwsz **Task** w konsoli OCP.
+2. Zainicjować i uruchmomić **Task** z wykorzystniem `TaskRun`.
+2. Dodać parametr do **Task**.
 
-*Task*, reprezentowane w interfejsie API jako obiekt typu `Task`, definiuje serię instrukcji, które są uruchamiane sekwencyjnie w celu wykonania logiki wymaganej przez *Task*. Każdy *Task* działa jako `pod` w klastrze Kubernetes, a każdy krok jest uruchamiany we własnym kontenerze.
+### Instalacja Tektoana z wykorzystaniem Operatora
+
+1.  Zaloguj się do konsoli OpenShift
+
+    a.  Otwórz przeglądarkę `Firefox`.
+
+    b.  Kliknij zakładkę **`OpenShift Console`** na pasku narzędzi zakładek.
+
+    c.  Dane logowania:
+
+    - Username: `ocadmin`
+
+    - Password: `ibmrhocp`
+
+2.  Zainstaluj **Red Hat OpenShift Pipelines** `Operator`
+
+    a.  Kliknij na **`Operators > OperatorHub`** w menu po lewej stronie.
+
+    b. Wyszukaj `Pipelines`.
+
+    <img src="../images/Pip01.png" width="70%">
+
+    c. Kliknij `Install`.
+
+    d. Pozostaw wszystkie ustawienia domślne i ponowanie kliknij. `Install`.
+
+    e. Zaakceptuj instalacje, klikając `Approve`
+
+    f. Poczekaj, az moduł się zainstaluje i odświez przeglądarkę.
+
+    g. W pasku po lewej stronie pojawi się zakładka **Pipelines**.
+
+    <img src="../images/Pip02.png" width="70%">
+
 
 ### Stwórz swój pierwszy Task
 
-Aby sworzyć Task, mozesz wykorzystać zarówno CLI jak i konsole OCP. W tym laboratorium przetestujesz obie opcje.
+**Task** w Tektonie to podstawowy element wykonawczy, który definiuje pojedyncze zadanie do wykonania w procesie CI/CD. Składa się z jednego lub więcej **Steps** (kroków), które są uruchamiane w kontenerach i wykonują konkretne polecenia, np. budowanie aplikacji, testowanie czy wdrażanie.
 
-1. Aby zalogować się do konsoli otwórz swoją ulubioną przeglądarkę i wkliej adres to konsoli OCP: `lab.ocp4.example.com`.
-2. Kliknij `lab-htpasswd`, a nastepnie zaloguj się loginem i hasłem dostarczonym przez prowadzacych. Znajdujesz się w konsoli OCP. Upewnij się, że jesteś w panelu administracyjnym.
-3. Z panelu administratora rozwiń zakładkę `Pipelines`, a następnie kliknij `Tasks`.
+Aby sworzyć **Task**, mozesz wykorzystać zarówno CLI jak i konsole OCP. W tym laboratorium przetestujesz obie opcje.
+
+1. W pierwszej kolejności utwórz nowy projekt (*namespace*):
+
+   a.  Kliknij na **`Home > Projects`** w menu po lewej stronie.
+
+   b. W prawym górnym roku kliknij `Create Project`
+
+   c. Nazwij go `tekton-lab` i kliknij `Create`.
+
+2. Czas na pierwszy **Task**. Z panelu administratora rozwiń zakładkę `Pipelines`, a następnie kliknij `Tasks`.
 
 <img src="../images/Tkt_01.png" width="70%">
 
-4. Zmień projekt na `tekton-lab-<TwojeID>`.
-5. Aby stworzyć swój pierwszy *Task*, kliknij `Create`, a następnie `Task`.
+4. Zmień projekt na `tekton-lab`.
+5. Aby stworzyć swój pierwszy **Task**, kliknij `Create`, a następnie `Task`.
 
 <img src="../images/Tkt_02.png" width="70%">
 
-6. Pojawi się okno, gdzie mozesz zdefiniować *Task*. Pierwszy Task, który stworzysz wykorzysta obraz Red Hat Universal Base Image i wykona komende `echo`, aby się "przywitać". Wklej następującą definicje do okna i kliknij `Create`.
+6. Pojawi się okno, gdzie mozesz zdefiniować *Task*. Pierwszy Task, który stworzysz wykorzysta obraz `Red Hat Universal Base Image` i wykona komende `echo`, aby się "przywitać". Wklej następującą definicje do okna i kliknij `Create`.
 
 ```yaml
 apiVersion: tekton.dev/v1beta1
@@ -52,7 +97,7 @@ spec:
 
 <img src="../images/Tkt_03.png" width="70%">
 
-Przyjrzyj się definicji powyżej. Typ obiektu to `Task`. Dalej defniujesz nazwę oraz poszczególne kroki (*Steps*) w ramach Task'u. Krok `powitanie` korzysta z obrazu UBI i wysyłają polecenie `echo` z odpowiednimi argumentami do konsoli.
+Przyjrzyj się definicji powyżej. Typ obiektu to `Task`. Dalej defniujesz nazwę oraz poszczególne kroki (*Steps*) w ramach Task'u. Krok `powitanie` korzysta z obrazu UBI i wykonuje polecenie `echo` z odpowiednimi argumentami w konsoli `bash`.
 
 ### Inicjalizacja Task'u.
 
@@ -85,7 +130,7 @@ spec:
 
 ### Wykorzystanie parametrów w Task'u
 
-1. Wróć do pulpitu `Tasks` i stwórz nowy *Task*, klikając `Create -> Task`.
+1. Wróć do pulpitu `Tasks` i stwórz nowy **Task**, klikając `Create -> Task`.
 2. W oknie wklej następującą definicje zadania:
 
 ```yaml
@@ -136,18 +181,27 @@ spec:
 
 ## Pipeline - Wstęp
 
-Teraz, gdy rozumiesz już `Task'i` i parametry, przejdźmy do tworzenia `Pipeline`. Zadania (*Tasks*) są przeznaczone do pojedynczych działań, podczas gdy *Pipeline* to seria zadań, które mogą być uruchamiane równolegle lub sekwencyjnie.
+Teraz, gdy wiesz juz jak działają `Task'i` i parametry, przejdziesz do tworzenia `Pipeline`. Zadania (*Tasks*) są przeznaczone do pojedynczych działań, podczas gdy *Pipeline* to seria zadań, które mogą być uruchamiane równolegle lub sekwencyjnie.
 
 W tym ćwiczeniu dowiesz się jak:
 
-1. Stworzyć *Task* z wykorzystaniem CLI.
-2. Stworzyć swój pierwsz *Pipeline* z wykorzystaniem CLI.
-3. Zainicjować i uruchmomić *Pipeline* z wykorzystniem `PipelineRun`.
+1. Stworzyć **Task** z wykorzystaniem CLI.
+2. Stworzyć swój pierwsz **Pipeline** z wykorzystaniem CLI.
+3. Zainicjować i uruchmomić **Pipeline** z wykorzystniem `PipelineRun`.
 
-### Stworzyć Task z wykorzystaniem CLI
+### Stwórz Task z wykorzystaniem CLI
 
 1. Stwórz folder roboczy `tekton-lab` na swojej stacji roboczej.
-1. Aby stworzyć Task z wykorzystaniem CLI w pierwszej kolejności musisz stworzyć plik `yaml` z definicją obiektu. Otwórz swój ulubiony edytor tekstu i wklej definicje `Tasku`:
+1. Aby stworzyć Task z wykorzystaniem CLI w pierwszej kolejności musisz stworzyć plik `yaml` z definicją obiektu:
+
+    a. Otwórz Terminal, a następnie stwórz folder `tekton-lab`. Wejdź do folderu, a następnie otwórz edytor tekstu.
+
+    ```
+    mkdir tekton-lab
+    cd tekton-lab
+    gedit rozmowa-task.yaml
+    ```
+3.  wklej definicje `Tasku`:
 
 ```yaml
 apiVersion: tekton.dev/v1beta1
@@ -174,7 +228,7 @@ spec:
 
 <img src="../images/Tkt_19.png" width="70%">
 
-2. Przeanalizuj `Task` i zapisz go jako `rozmowa-task.yaml` w wybranym przez Ciebie folderze (`/<ściezka-do-TwójFolder>/tekton-lab`).
+2. Przeanalizuj `Task` i zapisz go.
 3. Teraz musimsz zalogować się do klastra OCP korzystając z CLI. Wróć do konsoli OCP i rozwiń nazwę swojego użytkownika, a następnie kliknij `Copy login command`.
 
 <img src="../images/Tkt_11.png" width="70%">
@@ -189,7 +243,7 @@ spec:
 
 <img src="../images/Tkt_13.png" width="50%">
 
-8. Zmień projekt na `tekton-lab-<TwojeID>` wpisując komendę: `oc project tekton-lab-<TwojeID>`
+8. Zmień projekt na `tekton-lab` wpisując komendę: `oc project tekton-lab`
 
 <img src="../images/Tkt_14.png" width="50%">
 
@@ -197,9 +251,14 @@ spec:
 
 <img src="../images/Tkt_15.png" width="40%">
 
-### Stworzyć swój pierwsz Pipeline
+### Stwórz swój pierwsz Pipeline
 
-1. Ponownie otwórz swój ulubiony edytor i stwórz nowy plik o nazwie `rozmowa-pipeline.yaml`.
+1. Ponownie otwórz edytor i stwórz nowy plik o nazwie `rozmowa-pipeline.yaml`.
+
+```
+gedit rozmowa-pipeline.yaml
+```
+
 2. Wklej definicje `Pipeline`: 
 
 ```yaml
