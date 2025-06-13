@@ -239,16 +239,16 @@ Wprowadź następujące zmiany do pliku YAML, zgodnie z opisem i ilustracją pon
 
 3. Przejdźmy teraz do przeglądu tego zasobu (resource):
 
-    - Every resource in Openshift has a group, version, and kind. For the `Deployment` resource:
-        - The group is `apps`
-        - The version is `v1`
-        - The kind is `Deployment`
-    - The `metadata` specifies data that is needed for the runtime:
-        - The name of this instance is `example`
-        - The namespace where the resource is running is `myproject`
-        - Though not shown here, any labels associated with the resource. We will see the use of labels later.
-    - The `spec` section defines the details specific to this kind of resource:
-        - The `selector` defines details of the `pods` that this `deployment` will manage. The `matchLabels` attribute with value `app: httpd` means this `deployment` instance will search for and manage all pods whose labels contain `app: httpd`.
+    - Każdy zasób w OpenShift posiada grupę, wersję i typ (kind). Dla zasobu `Deployment`:
+        - Grupą jest `apps`
+        - Wersja to `v1`
+        - Typ to `Deployment`
+    - `metadata` określa, które pody będzie obsługiwać to wdrożenie:
+        - Nazwa instancji to `example`
+        - Przestrzeń nazw (namespace), w której działa zasób `myproject`
+        - Nie zostały jeszcze wyświetlone etykiety (labels), które zostaną użyte później
+    - Sekcja `spec` określa, które pody będzie obsługiwać to wdrożenie:
+        - `Selector` opisuje szczegóły `pods` które będą obsługiwać `deployment`. The `matchLabels` attribute with value `app: httpd` means this `deployment` instance will search for and manage all pods whose labels contain `app: httpd`.
     - The `replicas: 2`  field specifies the number of instances to run.
     - The `template` section describes information about how to run the container image and create the `pods`:
         - The `labels` section specifies what labels to add to the pods being to be created. Note that it matches the labels defined in the `selector`.
@@ -257,7 +257,7 @@ Wprowadź następujące zmiany do pliku YAML, zgodnie z opisem i ilustracją pon
         - The `RollingUpdate` strategy is the default strategy. It  allows you to update a set of pods without downtime. It replaces pods running the old version of the application with the new version, one by one.
     <br/> 
  
-4. Wait for both pods to be running:
+4. Zaczekaj aż oba pody zostaną uruchomione:
 
     ![Deployment After Create](../images/DeploymentAfterCreate.jpg)
 
