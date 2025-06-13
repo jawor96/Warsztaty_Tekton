@@ -37,7 +37,7 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
       ![](../images/vnc-connect.png)
 
 
-    e. Wpisz hasło:  **`passw0rd`**. Następnie kliknij **`Send Credentials`**, aby otworzyć środowisko laboratoryjn. 
+    e. Wpisz hasło:  **`passw0rd`**. Następnie kliknij **`Send Credentials`**, aby otworzyć środowisko laboratoryjne. 
 
     > Uwaga: Tam jest numeryczne zero w haśle: passw0rd  
 
@@ -63,7 +63,7 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
    <br>
 
 <details>
- <summary><b><font color="dodgerblue">Kliknij, aby otowrzyć:</font></b> Wskazówki dotyczące pracy w środowisku laboratoryjnym
+ <summary><b><font color="dodgerblue">Kliknij, aby otworzyć:</font></b> Wskazówki dotyczące pracy w środowisku laboratoryjnym
  </summary>
 
 1. Możesz zmienić rozmiar okna maszyny VM, korzystając z opcji **ustawień noVNC**. Aby dopasować rozmiar pulpitu wirtualnego do ekranu:
@@ -81,13 +81,13 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
    
     a. Skopiuj tekst z ćwieczenia, który chcesz wkleić do środowiska laboratoryjnego.
     
-    b. Kliknij ikone **`Clipboard`**, a następnie **`wklej`** tekst do schowka noVNC.
+    b. Kliknij ikonę **`Clipboard`**, a następnie **`wklej`** tekst do schowka noVNC.
 
     ![fit to window](../images/paste.png)
     
     c. Wklej tekst do maszyny wirtualnej, np. do okna terminala, okna przeglądarki itp.
 
-    d. Kliknij na ikone **`clipboard`**,aby zamknąć schowek.
+    d. Kliknij na ikonę **`clipboard`**, aby zamknąć schowek.
 
    
 3. Alternatywą dla opcji Kopiuj/Wklej noVNC jest otwarcie ćwiczeń w przeglądarce internetowej wewnątrz maszyny wirtualnej. Używając tej metody, możesz łatwo skopiować/wkleić tekst z ćwiczenia bez konieczności korzystania ze schowka noVNC. 
@@ -112,7 +112,7 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
 	 <br/>
 	 
  
-3. Zaloguj się korzystając z poniższych danych
+3. Zaloguj się korzystając z poniższych danych:
    
      * Username: **`ocadmin`**
      * Password: **`ibmrhocp`**
@@ -122,7 +122,7 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
 
 ### Overview - Informacje ogólne
 
-1. Kliknij kartę **`Overview`** znajdującą się pod sekcją **`Home`** w lewym menu, aby wyświetlić podsumowanie zdarzeń:
+1. Kliknij kartę **`Overview`** znajdującą się pod sekcją **`Home`** w menu po lewej stronie, aby wyświetlić podsumowanie zdarzeń:
 
     ![Overview1](../images/overview1.png)
 
