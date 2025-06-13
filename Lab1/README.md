@@ -181,62 +181,8 @@ Typowe artefakty potrzebne do uruchomienia aplikacji w OpenShift to:
 - Trasa (`route`) lub `ingress`, które odpowiadają za to, że aplikacja staje się dostępna spoza zapory klastra OpenShift.
 
     ![Typcal Deployment](../images/TypicalDeployment.jpg)
-#### First deployment 
 
-1. Under the **`Workloads`** tab, click **`Deployments`**. Then click **`Create Deployment`**:
-
-    ![Create Deployment](../images/CreateDeployment.jpg)
-
-   <br/>
-
-2. Note that the console shows you the YAML file for the deployment. 
-
-   make the following changes to the yaml as decribed and illustrated below. 
-
-    a. Type `'example'` as the **'name'** of the deployment. Be sure to retain the single quotes as illustrated below. 
-    
-    b. Change the number of `replicas` from 3 to **`2`** 
-
-    c. change **'app: name'** to `app: httpd` under 'matchLabels' and 'labels' 
-    
-    d. Click **`Create`**:
-
-    ![Deployment Replicas](../images/DeploymentReplicas.jpg)
-
-
-    Here is the specification of the deployment in its entirety:
-
-    ```yaml
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      namespace: myproject
-      name: 'example'
-    spec:
-      selector:
-        matchLabels:
-          app: httpd
-      replicas: 2
-      template:
-        metadata:
-          labels:
-            app: httpd
-        spec:
-          containers:
-            - name: container
-              image: >-
-                image-registry.openshift-image-registry.svc:5000/openshift/httpd:latest
-              ports:
-                - containerPort: 8080
-                  protocol: TCP
-      strategy:
-        type: RollingUpdate
-        rollingUpdate:
-          maxSurge: 25%
-          maxUnavailable: 25%
-    ```
-
-#### First deployment 
+#### Pierwszy deployment 
 
 1. W zakładce **`Workloads`** kliknij **`Deployments`**. Następnie wybierz **`Create Deployment`**:
 
