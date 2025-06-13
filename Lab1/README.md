@@ -10,8 +10,8 @@
 
 W tym laboratorium przedstawimy podstawy orkiestracji kontenerów przy wykorzystaniu OpenShift. Omówimy: 
 
-– podstawową nawigację za pomocą konsoli webowej
-- uruchomienie przykładowego obrazu 'httpd' z konsoli webowej
+- podstawową nawigację za pomocą konsoli webowej,
+- uruchomienie przykładowego obrazu 'httpd' z konsoli webowej,
 - deployment przykładowego obrazu 'httpd' z linii poleceń.
 
 ## Dostęp do środowiska
@@ -120,30 +120,30 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
      ![console](../images/loginconsole3.png)
 
 
-### Overview
+### Informacje ogólne - Overview
 
-1. Click on the **`Overview`** tab under **`Home`** in the left menu to view a summary of events:
+1. Kliknij kartę **`Overview`** znajdującą się pod sekcją **`Home`** w lewym menu, aby wyświetlić podsumowanie zdarzeń:
 
     ![Overview1](../images/overview1.png)
 
 	 <br/>
 
-2. Scroll down to view the resources `Cluster utilization`:
+2. Przewiń w dół, aby wyświetlić zasoby `Cluster utilization`:
 
     ![Overview2](../images/overview2.png)
 
      <br/>
 
-3. View the `Cluster inventory` information on the Overview page. You can Click on each item in the inventory to find out more:
+3. yświetl informacje o zasobach klastra `Cluster inventory` na stronie Przegląd (Overview). Możesz kliknąć każdy element w inwentarzu, aby dowiedzieć się więcej:
 
     ![Overview3](../images/overview3.png)
 
-    Note that:
+    Zwróć uwagę, że:
 
-    - **`Nodes`** represent physical or virtual hardware that your Openshift cluster is running.
-    - **`Pods`** are used to host and run one or more containers. Each node may run multiple pods. Containers in the same pod share the same network and storage.
-    - **`Storage classes`** represent the different types of storage configured and made available for your Openshift cluster. 
-    - **`Persistent Volume Claims`** (PVCs) represent the usage of storage by the pods. After a pod is removed, data not persistent to persistent storage are gone.
+    - **`Nodes`** rreprezentują fizyczny lub wirtualny sprzęt, na którym działa Twój klaster OpenShift.
+    - **`Pods`** służą do hostowania i uruchamiania jednego lub więcej kontenerów. Każdy węzeł może uruchamiać wiele podów. Kontenery w tym samym podzie współdzielą tę samą sieć i przestrzeń dyskową.
+    - **`Storage classes`** (Klasy pamięci masowej) reprezentują różne typy pamięci skonfigurowanej i udostępnionej dla klastra OpenShift.
+    - **`Persistent Volume Claims`** (PVCs, Żądania trwałej pamięci) oznaczają wykorzystanie pamięci przez pody. Po usunięciu poda dane, które nie zostały zapisane w trwałej pamięci, zostają utracone.
 
 ### Projects
 
