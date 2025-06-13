@@ -184,28 +184,28 @@ Typowe artefakty potrzebne do uruchomienia aplikacji w OpenShift to:
 
 #### First deployment 
 
-1. Under the **`Workloads`** tab, click **`Deployments`**. Then click **`Create Deployment`**:
+1. W zakładce **`Workloads`** kliknij **`Deployments`**. Następnie wybierz **`Create Deployment`**:
 
     ![Create Deployment](../images/CreateDeployment.jpg)
 
 	 <br/>
 
-2. Note that the console shows you the YAML file for the deployment. 
+2. Zwróć uwagę, że konsola wyświetla plik YAML dla wdrożenia.
 
-   make the following changes to the yaml as decribed and illustrated below. 
+Wprowadź następujące zmiany do pliku YAML, zgodnie z opisem i ilustracją poniżej:
 
-    a. Type `'example'` as the **'name'** of the deployment. Be sure to retain the single quotes as illustrated below. 
+    a. Wpisz `'example'` jako **'name'** (nazwę) deploymentu. Upewnij się, że zachowujesz pojedyncze cudzysłowy ', jak pokazano poniżej.
     
-    b. Change the number of `replicas` from 3 to **`2`** 
+    b. Zmień liczbę `replicas` (replik) z 3 na **`2`** 
 
-    c. change **'app: name'** to `app: httpd` under 'matchLabels' and 'labels' 
+    c. Zmień  **'app: name'** na `app: httpd` zarówno dla 'matchLabels' jak i 'labels' 
     
-    d. Click **`Create`**:
+    d. Kliknij przycisk **`Create`**:
 
     ![Deployment Replicas](../images/DeploymentReplicas.jpg)
 
 
-    Here is the specification of the deployment in its entirety:
+    Oto pełna specyfikacja wdrożenia (deployment) zgodna z wcześniej opisanymi zmianami:
 
     ```yaml
     apiVersion: apps/v1
@@ -237,7 +237,7 @@ Typowe artefakty potrzebne do uruchomienia aplikacji w OpenShift to:
           maxUnavailable: 25%
     ```
 
-3. Let's review this resource:
+3. Przejdźmy teraz do przeglądu tego zasobu (resource):
 
     - Every resource in Openshift has a group, version, and kind. For the `Deployment` resource:
         - The group is `apps`
