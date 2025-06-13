@@ -150,7 +150,7 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
 Projekty Openshift (`projects`) umożliwiają grupowanie powiązanych zasobów oraz przypisywanie im odrębnych zasad zarządzania. 
 Często artefakty związane z różnymi aplikacjami są przypisywane do różnych `projektów`. Zasoby należące do tego samego projektu są przechowywane w tej samej przestrzeni nazw (`namespace`) Kubernetes.
 
-1. Click on the **`Projects`** tab under **`Home`** in the left menu, followed by **`Create Project`**:
+1. Kliknij w zakładkę **`Projects`** znajdującą się w menu **`Home`** po lewej stronie, a następnie **`Create Project`**:
 
     ![projects1](../images/projects1.png)
 
@@ -165,10 +165,7 @@ Często artefakty związane z różnymi aplikacjami są przypisywane do różnyc
 3. Po utworzeniu kliknij każdą z kart projektu. 
 
    Zwróć uwagę na następujące elementy:
-
-   	Karta YAML pokazuje reprezentację projektu w formacie YAML. Każdy zasób w OpenShift jest reprezentowany jako struktura danych REST. Będziemy często pracować z plikami YAML podczas interakcji z OpenShift za pomocą wiersza poleceń.
-	•	Karta Powiązania ról (Role Bindings) pokazuje konfiguracje zabezpieczeń przypisane do Twojego projektu. Na razie zwróć uwagę, że po utworzeniu projektu automatycznie zdefiniowanych jest wiele różnych ról. Każda z tych ról pełni inną funkcję i jest już przypisana do określonych użytkowników, grup lub kont usługowych (service accounts).
-
+   
     - Karta `YAML` pokazuje reprezentację projektu w formacie YAML. Każdy zasób w OpenShift jest reprezentowany jako struktura danych REST. Będziemy często pracować z plikami YAML podczas interakcji z OpenShift za pomocą wiersza poleceń.
     - Zakładka `Role Bindings` (Powiązania Ról) okazuje konfiguracje zabezpieczeń przypisane do Twojego projektu. Na razie zwróć uwagę, że po utworzeniu projektu automatycznie zdefiniowanych jest wiele różnych ról. Każda z tych **roles** (ról) pełni inną funkcję i jest już przypisana do określonych **users** (użytkowników), **groups** (grup) lub **service accounts** (kont serwisowych).
 
