@@ -200,12 +200,10 @@ Wprowadź następujące zmiany do pliku YAML, zgodnie z opisem i ilustracją pon
   c. Zmień  **'app: name'** na `app: httpd` zarówno dla 'matchLabels' jak i 'labels' 
     
   d. Kliknij przycisk **`Create`**:
-  
-   ![Deployment Replicas](../images/DeploymentReplicas.jpg)
 
+![Deployment Replicas](../images/DeploymentReplicas.jpg)
 
-    Oto pełna specyfikacja wdrożenia (deployment) zgodna z wcześniej opisanymi zmianami:
-
+Oto pełna specyfikacja wdrożenia (deployment) zgodna z wcześniej opisanymi zmianami:
 
     ```yaml
     apiVersion: apps/v1
