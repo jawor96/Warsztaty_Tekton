@@ -165,21 +165,20 @@ Często artefakty związane z różnymi aplikacjami są przypisywane do różnyc
 3. Po utworzeniu kliknij każdą z kart projektu. 
 
    Zwróć uwagę na następujące elementy:
-   
+
     - Karta `YAML` pokazuje reprezentację projektu w formacie YAML. Każdy zasób w OpenShift jest reprezentowany jako struktura danych REST. Będziemy często pracować z plikami YAML podczas interakcji z OpenShift za pomocą wiersza poleceń.
-    - Zakładka `Role Bindings` (Powiązania Ról) okazuje konfiguracje zabezpieczeń przypisane do Twojego projektu. Na razie zwróć uwagę, że po utworzeniu projektu automatycznie zdefiniowanych jest wiele różnych ról. Każda z tych **roles** (ról) pełni inną funkcję i jest już przypisana do określonych **users** (użytkowników), **groups** (grup) lub **service accounts** (kont serwisowych).
+    - Zakładka `Role Bindings` (Powiązania Ról) okazuje konfiguracje zabezpieczeń przypisane do Twojego projektu. Na razie zwróć uwagę, że po utworzeniu projektu automatycznie zdefiniowanych jest wiele różnych ról. Każda z tych ról (**roles**) pełni inną funkcję i jest już przypisana do określonych użytkowników (**users**), grup (**groups**) lub kont serwisowych (**service accounts**).
 
    ![MyprojectAfterCreate](../images/MyprojectAftercreate.jpg)
 
-### First Application
+### Pierwsza aplikacja
 
-The typical artifacts you will need to run an application in Openshift are:
-
-- A `container image` containing your application, hosted in a container registry
-- One or more `pods` that specifies where to fetch an image and how it should be hosted. 
-- A `deployment` to control the number of instances pods. You don't normally configure a `pod` directly. Instead, you configure a `deployment` to manage a set of `pods`.
-- A `service` that exposes the application within the internal network, and enables the application to be load balanced within the Openshift cluster.
-- A `route` or `ingress` to make the application accessible outside of the Openshift cluster firewall.
+Typowe artefakty potrzebne do uruchomienia aplikacji w OpenShift to:
+- Obraz kontenera (`container image`) zawierający Twoją aplikację, umieszczony w rejestrze kontenerów.
+- Jeden lub więcej podów (`pods`), które określają, skąd pobrać obraz i jak go uruchomić.
+- Wdrożenie (`deployment`), które kontroluje liczbę instancji podów. Zazwyczaj nie konfiguruje się poda bezpośrednio — zamiast tego definiuje się deployment, który zarządza zestawem podów.
+- Usługa (`service`), która udostępnia aplikację w wewnętrznej sieci i umożliwia równoważenie obciążenia aplikacji w klastrze OpenShift.
+- Trasa (`route`) lub `ingress`, które odpowiadają za to, że aplikacja staje się dostępna spoza zapory klastra OpenShift.
 
     ![Typcal Deployment](../images/TypicalDeployment.jpg)
 
