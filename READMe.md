@@ -2,11 +2,13 @@
 
 ## Środowisko laboratoryjne
 
-Dostęp do środowiska przekazany przez prowadzących.
+Dostęp do środowiska będzie przekazany przez prowadzących.
 
 ## Laboratoria
 
-1. [Lab2](https://github.com/jawor96/Warsztaty_Tekton/tree/main/Lab1) - Podstawy Tektona na OpenShift Container Platform.
+1. [Lab1](https://github.com/jawor96/Warsztaty_Tekton/tree/main/Lab1) - Wstęp do orkiestracji konetenerami na OpenShift.
+
+2. [Lab2](https://github.com/jawor96/Warsztaty_Tekton/tree/main/Lab1) - Wstęp do Tektona na OpenShift.
 
 
 ## Kontakt
