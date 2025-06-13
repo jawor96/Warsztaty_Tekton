@@ -1,4 +1,4 @@
-# Introduction to Container Orchestration using Openshift
+# Wstęp do konteneryzacji na OpenShift
 
 ![banner](../images/banner1.jpeg) 
 
