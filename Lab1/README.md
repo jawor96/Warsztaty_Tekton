@@ -207,6 +207,7 @@ Wprowadź następujące zmiany do pliku YAML, zgodnie z opisem i ilustracją pon
 
     Oto pełna specyfikacja wdrożenia (deployment) zgodna z wcześniej opisanymi zmianami:
 
+    
     ```yaml
     apiVersion: apps/v1
     kind: Deployment
@@ -236,6 +237,7 @@ Wprowadź następujące zmiany do pliku YAML, zgodnie z opisem i ilustracją pon
           maxSurge: 25%
           maxUnavailable: 25%
     ```
+
 
 3. Przejdźmy teraz do przeglądu tego zasobu (resource):
 
