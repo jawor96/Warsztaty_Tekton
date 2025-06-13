@@ -193,8 +193,7 @@ Typowe artefakty potrzebne do uruchomienia aplikacji w OpenShift to:
 2. Zwróć uwagę, że konsola wyświetla plik YAML dla wdrożenia.
 
 Wprowadź następujące zmiany do pliku YAML, zgodnie z opisem i ilustracją poniżej:
-
-    a. Wpisz `'example' ` jako **'name'** (nazwę) deploymentu. Upewnij się, że zachowujesz pojedyncze cudzysłowy ', jak pokazano poniżej.
+  a. Wpisz `'example' ` jako **'name'** (nazwę) deploymentu. Upewnij się, że zachowujesz pojedyncze cudzysłowy ', jak pokazano poniżej.
     
     b. Zmień liczbę `replicas` (replik) z 3 na **`2`** 
 
@@ -207,7 +206,7 @@ Wprowadź następujące zmiany do pliku YAML, zgodnie z opisem i ilustracją pon
 
     Oto pełna specyfikacja wdrożenia (deployment) zgodna z wcześniej opisanymi zmianami:
 
-    
+
     ```yaml
     apiVersion: apps/v1
     kind: Deployment
