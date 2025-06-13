@@ -2,7 +2,7 @@
 
 ![banner](../images/banner1.jpeg) 
 
-**Last updated:** March 2024
+**Ostatnia aktualizacja:** Marzec 2024
 
 **Czas trwania:** 45 minut
 
@@ -10,9 +10,9 @@
 
 W tym laboratorium przedstawimy podstawy orkiestracji kontenerów przy wykorzystaniu OpenShift. Omówimy: 
 
-– podstawową nawigację za pomocą web console
-- deployment przykładowego obrazu 'httpd' z web console
-- deployment przykładowego obrazu 'httpd' z command line.
+– podstawową nawigację za pomocą konsoli webowej
+- uruchomienie przykładowego obrazu 'httpd' z konsoli webowej
+- deployment przykładowego obrazu 'httpd' z linii poleceń.
 
 ## Dostęp do środowiska
 
@@ -95,24 +95,24 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
 </details>
 <br>
 
-## Deploy the example 'httpd' image through the web console
+## Deployment przykładowego obrazu 'httpd' z poziomu web console
 
-### Login to the OpenShift web console
+### Logowanie do OpenShift web console
 
-1. Open the Firefox Web Browser from the VM. 
+1. Otwórz przeglądarkę Firefox na maszynie wirtualnej. 
 
      ![firefox](../images/runprebuilt3.png)
  
      <br/>
 
-2. Select the **`OpenShift Console`** bookmark at the top left of the browser window to access the OpenShift Container Platform web console.
+2. Wybierz zakładkę **`OpenShift Console`** w lewym górnym rogu okna przeglądarki, aby uzyskać dostęp do konsoli webowej OpenShift Container Platform.
 
      ![console](../images/loginconsole1.png)
      
 	 <br/>
 	 
  
-3. Log in to the account using the following credentials:
+3. Zaloguj się korzystając z poniższych danych
    
      * Username: **`ocadmin`**
      * Password: **`ibmrhocp`**
