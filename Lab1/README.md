@@ -4,15 +4,15 @@
 
 **Last updated:** March 2024
 
-**Duration:** 45 minutes
+**Czas trwania:** 45 minut
 
-## Introduction 
+## Wprowadzenie 
 
-In this lab, we will introduce you to the basics of container Orchestration using Openshift. We will
+W tym laboratorium przedstawimy podstawy orkiestracji kontenerów przy wykorzystaniu OpenShift. Omówimy: 
 
-- Perform basic navigation using the web console
-- Deploy the example `httpd` image through the web console.
-- Deploy the example `httpd` image through the command line.
+– podstawową nawigację za pomocą web console
+- deployment przykładowego obrazu 'httpd' z web console
+- deployment przykładowego obrazu 'httpd' z command line.
 
 ## Dostęp do środowiska
 
