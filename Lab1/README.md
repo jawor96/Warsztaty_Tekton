@@ -14,9 +14,7 @@ In this lab, we will introduce you to the basics of container Orchestration usin
 - Deploy the example `httpd` image through the web console.
 - Deploy the example `httpd` image through the command line.
 
-
-
-## Accessing the environment
+## Dostęp do środowiska
 
 Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instruktora, środowisko zostało już dla Ciebie przygotowane. Instruktor poda szczegóły dotyczące dostępu do środowiska laboratoryjnego.
 
