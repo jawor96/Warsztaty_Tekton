@@ -1,12 +1,10 @@
 # Introduction to Container Orchestration using Openshift
 
-![banner](./images/banner1.jpeg) 
+![banner](../images/banner1.jpeg) 
 
 **Last updated:** March 2024
 
 **Duration:** 45 minutes
-
-Need support? Contact **Kevin Postreich, Yi Tang**
 
 ## Introduction 
 
@@ -20,88 +18,81 @@ In this lab, we will introduce you to the basics of container Orchestration usin
 
 ## Accessing the environment
 
-If you are doing this lab as part of an instructor led workshop (virtual or face to face), an environment has already been provisioned for you. The instructor will provide the details for accessing the lab environment.
-
-Otherwise, you will need to reserve an environment for the lab. You can obtain one here. Follow the on-screen instructions for the “**Reserve now**” option.
-
-<https://TBD-to-the-reservation-link>
-
-The lab environment contains six (6) Linux VMs. 
-
-![](./images/env-list.png)
-
+Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instruktora, środowisko zostało już dla Ciebie przygotowane. Instruktor poda szczegóły dotyczące dostępu do środowiska laboratoryjnego.
 
 <br/>
 
-1.  Access the lab environment from your web browser. 
+1.  Dostań się do środowiska laboratoryjnego przez przeglądarkę internetową. 
      
-    A `Published Service` is configured to provide access to the **`Workstation`** VM through the noVNC interface for the lab environment.
+    `Środowisko Laboratoryjne` jest skonfigurowany tak, aby zapewnić dostęp do maszyny wirtualnej **`Stacji roboczej`** poprzez interfejs noVNC.
     
-    a. When the demo environment is provisioned, click on the **`environment tile`** to open its details view. 
+    a. Otwórz link otrzymany przez instruktora w przeglądarce internetowej. 
 
-    b. Click on the **`Published Service`** link which will display a **Directory listing**  
+    b. Kliknij na link **`Published Service`**, który wyświetli **Spis katalogów**  
     
-    c. Click on the **`vnc.html`** link to open the lab environment through the **noVNC** interface. 
+    c. Kliknij na link **`vnc.html`**, aby otworzyć środowisko laboratoryjne poprzez interfejs **noVNC**. 
     
-    ![](./images/vnc-link.png)
+    ![](../images/vnc-link.png)
+
+    d. Kliknij **`Connect`** 
     
-    d. Click the **`Connect`** button 
-    
-      ![](./images/vnc-connect.png)
+      ![](../images/vnc-connect.png)
 
 
-    e. Enter the password as:  **`passw0rd`**. Then click the **`Send Credentials`** button to access the lab environment. 
+    e. Wpisz hasło:  **`passw0rd`**. Następnie kliknij **`Send Credentials`**, aby otworzyć środowisko laboratoryjn. 
 
-    > Note: That is a numeric zero in passw0rd  
+    > Uwaga: Tam jest numeryczne zero w haśle: passw0rd  
 
-      ![](./images/vnc-password.png)
+      ![](../images/vnc-password.png)
 
 	 
 	 <br>
 	 
-2.  If prompted to Login to the "workstation" VM, use the credetials below: 
+2.  Jeśli zostaniesz poproszony o zalogowanie się do maszyny wirtualnej `stacja robocza`, użyj poniższych danych uwierzytelniających: 
 
-    The login credentials for the **workstation”** VM is:
+    Dane logowania do maszyny wirtualnej **`stacja robocza`** to:
  
      - User ID: **techzone**
 
      - Password: **IBMDem0s!**
 
-     > Note: That is a numneric zero in the password
+     > Uwaga: Tam jest numeryczne zero w haśle: passw0rd
 
-	 <br>
+   <br>
  
-     ![student vm screen](./images/techzone-user-pw.png)
+     ![student vm screen](../images/techzone-user-pw.png)
 	 
-	 <br>
+   <br>
 
-## Tips for working in the lab environment     
+<details>
+ <summary><b><font color="dodgerblue">Kliknij, aby otowrzyć:</font></b> Wskazówki dotyczące pracy w środowisku laboratoryjnym
+ </summary>
 
-1. You can resize the viewable area using the **noVNC Settings** options to resize the virtual desktop to fit your screen.
+1. Możesz zmienić rozmiar okna maszyny VM, korzystając z opcji **ustawień noVNC**. Aby dopasować rozmiar pulpitu wirtualnego do ekranu:
 
-    a. From the environemnt VM, click on the **twisty** on the noNC control pane to open the menu.  
+    a. Z poziomu środowiska VM kliknij **strzałkę** w panelu sterowania noNC, aby otworzyć menu.  
 
-    ![fit to window](./images/z-twisty.png)
+    ![fit to window](../images/z-twisty.png)
 
-    b. To increase the visible area, click on `Settings > Scaling Mode` and set the value to `Remote Resizing`
+    b. Aby zwiększyć widoczny obszar, kliknij `Settings > Scaling Mode` i ustaw wartość na `Remote Resizing` 
       
-     ![fit to window](./images/z-remote-resize.png)
+     ![fit to window](../images/z-remote-resize.png)
 
 
-2.  You can copy / paste text from the lab guide into the lab environment using the clipboard in the noVNC viewer. 
+2.  Tekst z ćwiczeń można kopiować i wklejać do środowiska laboratoryjnego, korzystając ze schowka w przeglądarce noVNC. 
    
-    a. Copy the text from the lab guide that you want to paste into the lab environment
+    a. Skopiuj tekst z ćwieczenia, który chcesz wkleić do środowiska laboratoryjnego.
     
-    b. Click the **Clipboard** icon and **paste** the text into the noVNC clipboard
+    b. Kliknij ikone **`Clipboard`**, a następnie **`wklej`** tekst do schowka noVNC.
 
-    ![fit to window](./images/paste.png)
+    ![fit to window](../images/paste.png)
     
-    c. Paste the text into the VM, such as to a terminal window, browser window, etc. 
+    c. Wklej tekst do maszyny wirtualnej, np. do okna terminala, okna przeglądarki itp.
 
-    d. Click on the **clipboard** icon again to close the clipboard
+    d. Kliknij na ikone **`clipboard`**,aby zamknąć schowek.
 
    
-3. An alternative to using the noVNC Copy / Paste option, you may consider opening the lab guide in a web browser inside of the VM. Using this method, you can easily copy / paste text from the lab guide without having to use the noVNC clipboard. 
+3. Alternatywą dla opcji Kopiuj/Wklej noVNC jest otwarcie ćwiczeń w przeglądarce internetowej wewnątrz maszyny wirtualnej. Używając tej metody, możesz łatwo skopiować/wkleić tekst z ćwiczenia bez konieczności korzystania ze schowka noVNC. 
 
 
     <br>
@@ -113,13 +104,13 @@ The lab environment contains six (6) Linux VMs.
 
 1. Open the Firefox Web Browser from the VM. 
 
-     ![firefox](images/runprebuilt3.png)
+     ![firefox](../images/runprebuilt3.png)
  
      <br/>
 
 2. Select the **`OpenShift Console`** bookmark at the top left of the browser window to access the OpenShift Container Platform web console.
 
-     ![console](images/loginconsole1.png)
+     ![console](../images/loginconsole1.png)
      
 	 <br/>
 	 
@@ -129,26 +120,26 @@ The lab environment contains six (6) Linux VMs.
      * Username: **`ocadmin`**
      * Password: **`ibmrhocp`**
 
-     ![console](images/loginconsole3.png)
+     ![console](../images/loginconsole3.png)
 
 
 ### Overview
 
 1. Click on the **`Overview`** tab under **`Home`** in the left menu to view a summary of events:
 
-    ![Overview1](images/overview1.png)
+    ![Overview1](../images/overview1.png)
 
 	 <br/>
 
 2. Scroll down to view the resources `Cluster utilization`:
 
-    ![Overview2](images/overview2.png)
+    ![Overview2](../images/overview2.png)
 
      <br/>
 
 3. View the `Cluster inventory` information on the Overview page. You can Click on each item in the inventory to find out more:
 
-    ![Overview3](images/overview3.png)
+    ![Overview3](../images/overview3.png)
 
     Note that:
 
@@ -164,13 +155,13 @@ It is common for artifacts related to different applications to be assigned to d
 
 1. Click on the **`Projects`** tab under **`Home`** in the left menu, followed by **`Create Project`**:
 
-    ![projects1](images/projects1.png)
+    ![projects1](../images/projects1.png)
 
 	<br/>
 
 2. In the dialog, enter `myproject` as project name, then click **`Create`**:
 
-    ![Myproject](images/Myproject.jpg)
+    ![Myproject](../images/Myproject.jpg)
 
 	 <br/>
 	 
@@ -181,7 +172,7 @@ It is common for artifacts related to different applications to be assigned to d
     - The `YAML` tab shows you the YAML representation of your project. Every resource in Openshift is represented as a REST data structure. We'll be working with YAML files a lot more when we interact with Openshift via the command line.
     - The `Role Bindings` tab shows you the security configurations that apply to your project. For now, just take notice that there are many different roles already defined when a project is created. Each of these **roles** is used for a different purpose, and already mapped to different **users** and **groups**, or **service accounts**.
 
-   ![MyprojectAfterCreate](images/MyprojectAftercreate.jpg)
+   ![MyprojectAfterCreate](../images/MyprojectAftercreate.jpg)
 
 ### First Application
 
@@ -193,13 +184,13 @@ The typical artifacts you will need to run an application in Openshift are:
 - A `service` that exposes the application within the internal network, and enables the application to be load balanced within the Openshift cluster.
 - A `route` or `ingress` to make the application accessible outside of the Openshift cluster firewall.
 
-    ![Typcal Deployment](images/TypicalDeployment.jpg)
+    ![Typcal Deployment](../images/TypicalDeployment.jpg)
 
 #### First deployment 
 
 1. Under the **`Workloads`** tab, click **`Deployments`**. Then click **`Create Deployment`**:
 
-    ![Create Deployment](images/CreateDeployment.jpg)
+    ![Create Deployment](../images/CreateDeployment.jpg)
 
 	 <br/>
 
@@ -215,7 +206,7 @@ The typical artifacts you will need to run an application in Openshift are:
     
     d. Click **`Create`**:
 
-    ![Deployment Replicas](images/DeploymentReplicas.jpg)
+    ![Deployment Replicas](../images/DeploymentReplicas.jpg)
 
 
     Here is the specification of the deployment in its entirety:
@@ -272,7 +263,7 @@ The typical artifacts you will need to run an application in Openshift are:
  
 4. Wait for both pods to be running:
 
-    ![Deployment After Create](images/DeploymentAfterCreate.jpg)
+    ![Deployment After Create](../images/DeploymentAfterCreate.jpg)
 
     <br/> 
 
@@ -284,19 +275,19 @@ The typical artifacts you will need to run an application in Openshift are:
     You do not create the pod resources yourself. 
 That is the reason that `Pods` tab is under the `deployment` resource you just created.
 
-    ![Create Service](images/DeploymentToPods.jpg)
+    ![Create Service](../images/DeploymentToPods.jpg)
 
     <br/> 
 
 6. Click on one of the pods:
 
-    ![Create Service](images/Pods.jpg)
+    ![Create Service](../images/Pods.jpg)
 
     <br/> 
 
 7. Explore the various **tabs** for your pod
 
-    ![Create Service](images/ExplorePod.jpg)
+    ![Create Service](../images/ExplorePod.jpg)
 
     <br/> 
 
@@ -316,14 +307,14 @@ A **`service`** enables the pods we just created to be load balanced within the 
 
 1. Scroll down to the **`Networking`** tab on the left navigation, click **`Services`**, then click **`Create Service`**:
 
-    ![Create Service](images/CreateService.jpg)
+    ![Create Service](../images/CreateService.jpg)
 
     <br/>
 
 2. Update the `YAML` parameters as follows:
     
     **(Before update)**
-    ![Create Service Params Before](images/CreateService_before.jpg)
+    ![Create Service Params Before](../images/CreateService_before.jpg)
     
     a. Under spec.selector: 
 	
@@ -344,13 +335,13 @@ A **`service`** enables the pods we just created to be load balanced within the 
 
    
     **(After update)**
-    ![Create Service Params After](images/CreateService_after.jpg)
+    ![Create Service Params After](../images/CreateService_after.jpg)
 
     <br/>
 	
 3. After the service is created, click on the **`YAML`** tab:
 
-    ![Create Service After YAML ](images/CreateServiceAfterYAML.jpg)
+    ![Create Service After YAML ](../images/CreateServiceAfterYAML.jpg)
 
     The YAML file looks like:
     ```yaml
@@ -409,7 +400,7 @@ A route exposes your internal endpoints outside your cluster's built-in firewall
 
 1. Click on the **`Route`** tab under **`Networking`** in the left navigation, then click **`Create Route`**:
 
-    ![Create Route](images/CreateRoute.jpg)
+    ![Create Route](../images/CreateRoute.jpg)
 
     <br/>
 
@@ -422,7 +413,7 @@ A route exposes your internal endpoints outside your cluster's built-in firewall
 
     <br/>
 
-    ![Create Route Parameters](images/CreateRouteParams.jpg)
+    ![Create Route Parameters](../images/CreateRouteParams.jpg)
 
     Note that we are ignoring TLS configuration just for the purpose of this lab.  Security will be addressed in a different lab.
 
@@ -430,13 +421,13 @@ A route exposes your internal endpoints outside your cluster's built-in firewall
 
 3. Access the route at the link provided under the `Location` field of the Route resource. The route location will open in a new browser tab.
 
-    ![Create Route](images/CreateRouteAccessRoute.jpg)
+    ![Create Route](../images/CreateRouteAccessRoute.jpg)
 
     <br/>
 
 4. If you have configured everything correctly, the browser will show the  `Red Hat Enterprise Linux Test page`. 
 
-  ![Create Route](images/CreateRouteAccessRouteResult.jpg)
+  ![Create Route](../images/CreateRouteAccessRouteResult.jpg)
 
 <br/>
 
@@ -448,64 +439,64 @@ A route exposes your internal endpoints outside your cluster's built-in firewall
 
 1. Click on the **`Projects`** tab under **`Home`** from the left navigation, then type `myproject` in the **filter** field:
 
-    ![Filter Project](images/filterProject.png)
+    ![Filter Project](../images/filterProject.png)
 
 2. Click on `myproject`:
 
-    ![Locate Myproject](images/selectMyProject.png)
+    ![Locate Myproject](../images/selectMyProject.png)
 
     <br/>
 
 3. Scroll down to the `Inventory` section to see the resources that were created. Recall that we have created one deployment with 2 pods in the specification. We also created one service, and one route.
 
-    ![Locate Myproject Resoruces](images/LocateMyprojectResources.png)
+    ![Locate Myproject Resoruces](../images/LocateMyprojectResources.png)
 
     <br/>
 
 4. Under the **Inventory** section, click on the **2 pods** link:
 
-    ![Locate Myproject Resoruces](images/LocateMyprojectPods.png)
+    ![Locate Myproject Resoruces](../images/LocateMyprojectPods.png)
 
      <br/>
 
 5. Delete one of the pods by clicking on the menu on the right, then selecting `Delete pod`. When prompted, click `Delete`.
 
-    ![Delete Pod](images/DeletePod.png)
+    ![Delete Pod](../images/DeletePod.png)
 
     a. Click `Delete` to confirm the deletion of the pod 
 
-    ![Delete Pod](images/confirmDeletePod.png)
+    ![Delete Pod](../images/confirmDeletePod.png)
 
 
     This is not the right way to reduce number of instances. You will notice that as soon as one of the pods is being terminated, another one is being created. 
     
     The reason is that the controller for the `deployment` resource knows that your specification is for **2 instances**, and it honors that specification by creating another one. This also gives you automatic failure recovery should one of the pods crashes on its own.
 
-    ![Delete Pod](images/DeletePodRecreate.png)
+    ![Delete Pod](../images/DeletePodRecreate.png)
 
  
     <br/>
 
 6. To change the number of instances, you will need to change the specification of your deployment. Click on the **`Deployments`** tab under **`Workloads`** in the left navigation, then click on `example` deployment:
 
-    ![Locate Deloyment](images/LocateDeployment.png)
+    ![Locate Deloyment](../images/LocateDeployment.png)
 
     <br/>
 
 7. Click on the **`down arrow`** to reduce the replica size down to 1:
 
-    ![Reduce Deployment](images/DeploymentReducePod.png)
+    ![Reduce Deployment](../images/DeploymentReducePod.png)
 
     <br/>
 
 8. After the operation is completed, click on the **`YAML`** tab:
 
-    ![Reduce Deployment](images/DeploymentReducePod1.png)
+    ![Reduce Deployment](../images/DeploymentReducePod1.png)
 
     Note that the console had changed the REST specification on your behalf so that the replica count is now 1:
 
 
-    ![Reduce Deployment YAML](images/DeploymentReducePod1YAML.png)
+    ![Reduce Deployment YAML](../images/DeploymentReducePod1YAML.png)
 
 
 
@@ -530,7 +521,7 @@ The `oc` command is already installed on your VM's terminal.
 
 1. Open a new `Terminal` window on the Desktop VM:
    
-    ![terminal](images/checkenv1.png)
+    ![terminal](../images/checkenv1.png)
    
     <br/>
    
@@ -564,7 +555,7 @@ The `oc` command is already installed on your VM's terminal.
 
     After login, the project last accessed is displayed, and it may or may not be the `default` project shown below:
 
-    ![Login1](images/login.png)
+    ![Login1](../images/login.png)
    
 
 ### Listing resources
@@ -936,7 +927,7 @@ Some resources are global (not in a namespace), while others are scoped to a `na
 
 12. Open your Firefox browser again and visit the URL outputted by the previous command. You should see a web page displaying the following message:
 
-    ![firstapplication1](images/httpdApp.png)
+    ![firstapplication1](../images/httpdApp.png)
 
 
 ### Changing Replica Instance
@@ -1023,7 +1014,7 @@ Some resources are global (not in a namespace), while others are scoped to a `na
 
         gedit ./Deployment.yaml
 
-    ![firstapplication1](images/geditDeployment.png)
+    ![firstapplication1](../images/geditDeployment.png)
 
 
     c. `Save` the Deployment.yaml file
