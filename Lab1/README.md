@@ -120,7 +120,7 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
      ![console](../images/loginconsole3.png)
 
 
-### Informacje ogólne - Overview
+### Overview - Informacje ogólne
 
 1. Kliknij kartę **`Overview`** znajdującą się pod sekcją **`Home`** w lewym menu, aby wyświetlić podsumowanie zdarzeń:
 
@@ -134,18 +134,18 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
 
      <br/>
 
-3. yświetl informacje o zasobach klastra `Cluster inventory` na stronie Przegląd (Overview). Możesz kliknąć każdy element w inwentarzu, aby dowiedzieć się więcej:
+3. Wyświetl informacje o zasobach klastra `Cluster inventory` na stronie Przegląd (Overview). Możesz kliknąć każdy element z listy, aby dowiedzieć się więcej:
 
     ![Overview3](../images/overview3.png)
 
     Zwróć uwagę, że:
 
-    - **`Nodes`** rreprezentują fizyczny lub wirtualny sprzęt, na którym działa Twój klaster OpenShift.
+    - **`Nodes`** reprezentują fizyczny lub wirtualny sprzęt, na którym działa Twój klaster OpenShift.
     - **`Pods`** służą do hostowania i uruchamiania jednego lub więcej kontenerów. Każdy węzeł może uruchamiać wiele podów. Kontenery w tym samym podzie współdzielą tę samą sieć i przestrzeń dyskową.
-    - **`Storage classes`** (Klasy pamięci masowej) reprezentują różne typy pamięci skonfigurowanej i udostępnionej dla klastra OpenShift.
-    - **`Persistent Volume Claims`** (PVCs, Żądania trwałej pamięci) oznaczają wykorzystanie pamięci przez pody. Po usunięciu poda dane, które nie zostały zapisane w trwałej pamięci, zostają utracone.
+    - **`Storage classes`** (klasy pamięci masowej) reprezentują różne typy pamięci skonfigurowanej i udostępnionej klastrowi OpenShift.
+    - **`Persistent Volume Claims`** (PVCs, Żądania trwałej pamięci) oznaczają wykorzystanie pamięci przez pody. Po usunięciu poda dane, które nie zostały zapisane w trwałej pamięci zostaną utracone.
 
-### Projects
+### Projekty - Projects
 
 Openshift `projects` allow you to group related resources together and to assign them separate management policies. 
 It is common for artifacts related to different applications to be assigned to different `projects`. Resources that belong to the same project are stored in the same Kubernetes `namespace`.
