@@ -195,13 +195,13 @@ Typowe artefakty potrzebne do uruchomienia aplikacji w OpenShift to:
 Wprowadź następujące zmiany do pliku YAML, zgodnie z opisem i ilustracją poniżej:
   a. Wpisz `'example' ` jako **'name'** (nazwę) deploymentu. Upewnij się, że zachowujesz pojedyncze cudzysłowy ', jak pokazano poniżej.
     
-    b. Zmień liczbę `replicas` (replik) z 3 na **`2`** 
+  b. Zmień liczbę `replicas` (replik) z 3 na **`2`** 
 
-    c. Zmień  **'app: name'** na `app: httpd` zarówno dla 'matchLabels' jak i 'labels' 
+  c. Zmień  **'app: name'** na `app: httpd` zarówno dla 'matchLabels' jak i 'labels' 
     
-    d. Kliknij przycisk **`Create`**:
-
-    ![Deployment Replicas](../images/DeploymentReplicas.jpg)
+  d. Kliknij przycisk **`Create`**:
+  
+   ![Deployment Replicas](../images/DeploymentReplicas.jpg)
 
 
     Oto pełna specyfikacja wdrożenia (deployment) zgodna z wcześniej opisanymi zmianami:
