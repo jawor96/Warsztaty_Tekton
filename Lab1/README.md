@@ -147,8 +147,8 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
 
 ### Projekty - Projects
 
-Openshift `projects` allow you to group related resources together and to assign them separate management policies. 
-It is common for artifacts related to different applications to be assigned to different `projects`. Resources that belong to the same project are stored in the same Kubernetes `namespace`.
+Projekty Openshift (`projects`) umożliwiają grupowanie powiązanych zasobów oraz przypisywanie im odrębnych zasad zarządzania. 
+Często artefakty związane z różnymi aplikacjami są przypisywane do różnych `projektów`. Zasoby należące do tego samego projektu są przechowywane w tej samej przestrzeni nazw (`namespace`) Kubernetes.
 
 1. Click on the **`Projects`** tab under **`Home`** in the left menu, followed by **`Create Project`**:
 
