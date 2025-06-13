@@ -156,18 +156,21 @@ Często artefakty związane z różnymi aplikacjami są przypisywane do różnyc
 
 	<br/>
 
-2. In the dialog, enter `myproject` as project name, then click **`Create`**:
+2. W oknie dialogowym wpisz `myproject` jako nazwę projektu, a następnie kliknij **`Create`**:
 
     ![Myproject](../images/Myproject.jpg)
 
 	 <br/>
 	 
-3. After creation, click on each of the tabs of myproject you just created. 
+3. Po utworzeniu kliknij każdą z kart projektu. 
 
-   Note the following:
+   Zwróć uwagę na następujące elementy:
 
-    - The `YAML` tab shows you the YAML representation of your project. Every resource in Openshift is represented as a REST data structure. We'll be working with YAML files a lot more when we interact with Openshift via the command line.
-    - The `Role Bindings` tab shows you the security configurations that apply to your project. For now, just take notice that there are many different roles already defined when a project is created. Each of these **roles** is used for a different purpose, and already mapped to different **users** and **groups**, or **service accounts**.
+   	Karta YAML pokazuje reprezentację projektu w formacie YAML. Każdy zasób w OpenShift jest reprezentowany jako struktura danych REST. Będziemy często pracować z plikami YAML podczas interakcji z OpenShift za pomocą wiersza poleceń.
+	•	Karta Powiązania ról (Role Bindings) pokazuje konfiguracje zabezpieczeń przypisane do Twojego projektu. Na razie zwróć uwagę, że po utworzeniu projektu automatycznie zdefiniowanych jest wiele różnych ról. Każda z tych ról pełni inną funkcję i jest już przypisana do określonych użytkowników, grup lub kont usługowych (service accounts).
+
+    - Karta `YAML` pokazuje reprezentację projektu w formacie YAML. Każdy zasób w OpenShift jest reprezentowany jako struktura danych REST. Będziemy często pracować z plikami YAML podczas interakcji z OpenShift za pomocą wiersza poleceń.
+    - Zakładka `Role Bindings` (Powiązania Ról) okazuje konfiguracje zabezpieczeń przypisane do Twojego projektu. Na razie zwróć uwagę, że po utworzeniu projektu automatycznie zdefiniowanych jest wiele różnych ról. Każda z tych **roles** (ról) pełni inną funkcję i jest już przypisana do określonych **users** (użytkowników), **groups** (grup) lub **service accounts** (kont serwisowych).
 
    ![MyprojectAfterCreate](../images/MyprojectAftercreate.jpg)
 
