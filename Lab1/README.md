@@ -248,12 +248,12 @@ Oto pełna specyfikacja wdrożenia (deployment) zgodna z wcześniej opisanymi zm
         - Nie zostały jeszcze wyświetlone etykiety (labels), które zostaną użyte później
     - Sekcja `spec` określa, które pody będzie obsługiwać to wdrożenie:
         - `Selector` opisuje szczegóły `pods` które będą obsługiwać `deployment`. The `matchLabels` attribute with value `app: httpd` means this `deployment` instance will search for and manage all pods whose labels contain `app: httpd`.
-    - The `replicas: 2`  field specifies the number of instances to run.
-    - The `template` section describes information about how to run the container image and create the `pods`:
-        - The `labels` section specifies what labels to add to the pods being to be created. Note that it matches the labels defined in the `selector`.
-        - The `containers` section specifies where to fetch the container image and which ports to expose. For our example, the image to run is `openshift/httpd`.
-    - The `stratey` section defines how to create, upgrade, or downgrade different versions of applications. 
-        - The `RollingUpdate` strategy is the default strategy. It  allows you to update a set of pods without downtime. It replaces pods running the old version of the application with the new version, one by one.
+    - Pole `replicas: 2` określa liczbę instancji do uruchomienia.
+    - Sekcja `template` zawiera informacje w jaki sposób uruchomić kontener i utworzyć `pods`:
+        - Sekcja `labels` jakie etykiety mają zostać dodane do tworzonych `pods`. Zwróć uwagę, że etykiety te pasują do etykiet zdefiniowanych w sekcji selector. `selector`.
+        - Sekcja `containers` określa, skąd pobrać obraz kontenera oraz które porty mają zostać wystawione. W naszym przypadku obraz to `openshift/httpd`.
+    - Sekcja `stratey` określa, w jaki sposób tworzyć, aktualizować lub przywracać różne wersje aplikacji. 
+        - Strategia `RollingUpdate` jest ustawiona jako domyślna. Pozwala na aktualizację zestawu podów bez przestojów. Zastępuje pody działające na starej wersji aplikacji nowymi — jeden po drugim.
     <br/> 
  
 4. Zaczekaj aż oba pody zostaną uruchomione:
@@ -263,40 +263,40 @@ Oto pełna specyfikacja wdrożenia (deployment) zgodna z wcześniej opisanymi zm
     <br/> 
 
 
-5. Click on `Pods` tab. 
+5. Kliknij w zakładkę `Pods`. 
 
-    Note that the pods resources are managed by the controller for your `deployment`. 
+    Zwróć uwagę, że zasoby podów są zarządzane przez kontroler przypisany do Twojego wdrożenia (`deployment`). 
 
-    You do not create the pod resources yourself. 
-That is the reason that `Pods` tab is under the `deployment` resource you just created.
+    Nie tworzysz zasobów podów samodzielnie.
+Dlatego zakładka `Pods` znajduje się w zasobie `deployment`, który właśnie utworzyłeś.
 
     ![Create Service](../images/DeploymentToPods.jpg)
 
     <br/> 
 
-6. Click on one of the pods:
+6. Kliknij na jeden z podów:
 
     ![Create Service](../images/Pods.jpg)
 
     <br/> 
 
-7. Explore the various **tabs** for your pod
+7. Przejżyj zakładki (**tabs**) dostępne dla Twojego poda.
 
     ![Create Service](../images/ExplorePod.jpg)
 
     <br/> 
 
-     - **`Detils:`** displays the hi-level detsils of the pod.
-     - **`Metrics:`** displays the overall resource usage for your pod. 
-     Note that for CPU usage, the unit is m, or milli-core, which is 1/1000th of one core.
-     - **`YAML:`** examine the YAML that describes your pod. This YAML is created by the deployment controller based on the specification you supplied in your deployment. Note that labels associated with your pod are what you had specified in the deployment.
-     - **`Environment:`** lists the environment variables defined for your pod. For our `httpd` pod, there is none.
-     - **`Logs:`** shows the console log for your container. 
-     - **`Events:`** are a resource type in Kubernetes that are automatically created when other resources have state changes, errors, or other messages that should be broadcast to the system.
-     - **`Terminal:`** Opens a remote shell into your container. As with the Introduction to Docker lab, no shell is available within the container for this image. This makes it more secure, but also more difficult to debug.
+     - **`Detils:`** wyświetla wysokopoziomowe szczegóły dotyczące poda.
+     - **`Metrics:`** wyświetla ogólne zużycie zasobów przez Twój pod. 
+     wróć uwagę, że jednostką zużycia CPU jest m (mili-core), co oznacza jedną tysięczną rdzenia procesora.
+     - **`YAML:`** przeanalizuj plik YAML, który opisuje Twój pod. Ten YAML został wygenerowany automatycznie przez kontroler wdrożenia (Deployment Controller) na podstawie specyfikacji, którą podałeś w definicji Deployment.
+     - **`Environment:`** wyświetla zmienne środowiskowe zdefiniowane dla Twojego poda. Dla poda `httpd` nie ma żadnego.
+     - **`Logs:`** wyświetla logi konsoli (console log) Twojego kontenera. 
+     - **`Events:`** to typy zasobów w Kubernetes, które są automatycznie tworzone, gdy inne zasoby zmieniają stan, wystąpią błędy, lub pojawią się inne komunikaty, które powinny być przekazane systemowi.
+     - **`Terminal:`** otwiera zdalną powłokę (shell) w Twoim kontenerze. Podobnie jak w laboratorium „Wprowadzenie do Dockera”, powłoka nie jest dostępna w tym obrazie kontenera. Zwiększa to bezpieczeństwo, ale jednocześnie utrudnia debugowanie.
 
 
-### First Service
+### Pierwszy Serwis
 
 A **`service`** enables the pods we just created to be load balanced within the Openshift cluster. 
 
