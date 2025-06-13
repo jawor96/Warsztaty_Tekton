@@ -60,7 +60,7 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
 
    <br>
  
-     ![student vm screen](../images/techzone-user-pw.png)
+![student vm screen](../images/techzone-user-pw.png)
 	 
    <br>
 
@@ -94,9 +94,8 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
    
 3. Alternatywą dla opcji Kopiuj/Wklej noVNC jest otwarcie ćwiczeń w przeglądarce internetowej wewnątrz maszyny wirtualnej. Używając tej metody, możesz łatwo skopiować/wkleić tekst z ćwiczenia bez konieczności korzystania ze schowka noVNC. 
 
-
-    <br>
-
+</details>
+<br>
 
 ## Deploy the example 'httpd' image through the web console
 
