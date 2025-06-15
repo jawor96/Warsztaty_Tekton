@@ -296,49 +296,48 @@ Dlatego zakładka `Pods` znajduje się w zasobie `deployment`, który właśnie 
      - **`Terminal:`** otwiera zdalną powłokę (shell) w Twoim kontenerze. Podobnie jak w laboratorium „Wprowadzenie do Dockera”, powłoka nie jest dostępna w tym obrazie kontenera. Zwiększa to bezpieczeństwo, ale jednocześnie utrudnia debugowanie.
 
 
-### Pierwszy Serwis
+### Pierwszy Serwis (Service)
 
-A **`service`** enables the pods we just created to be load balanced within the Openshift cluster. 
+Serwis (**`service`**) umolżliwia równoważenie obciążenia pomiędzy podami, które zostały właśnie utorzone w obrębie klastra Openshift.
 
-1. Scroll down to the **`Networking`** tab on the left navigation, click **`Services`**, then click **`Create Service`**:
+1. Przewiń w dół do zakładki **`Networking`** (sieci) w lewym menu nawigacyjnym, kliknij **`Services`** (Usługi), a następnie **`Create Service`** (utwórz usługę):
 
     ![Create Service](../images/CreateService.jpg)
 
     <br/>
 
-2. Update the `YAML` parameters as follows:
+2. Zaktualizuj parametry w pliku `YAML`:
     
-    **(Before update)**
+    **(Przed aktualizacją)**
     ![Create Service Params Before](../images/CreateService_before.jpg)
     
-    a. Under spec.selector: 
+    a. W sekcji spec.selector: 
 	
-      - change `MyApp` to `httpd`
-        
-        This is how the service will find the pods to load balance. Therefore, it matches the labels (`spec.selector.matchLabels`) that we used when creating the deployment for the httpd application.
+      - zmień `MyApp` na `httpd`
+        W ten sposób usługa odnajdzie pody, które ma równoważyć obciążeniem. Dlatego odpowiada etykietom (`spec.selector.matchLabels`) które zostały użyte podczas tworzenia deploymentu aplikacji httpd.
    
     <br/>   
    
-    b. Under spec.ports:
+    b. W sekcji spec.ports:
 	
-      - change `80` to `8080` and 
-      - change `9376` to `8080` (the same ports we used in the containers lab).
+      - zmień `80` na `8080` oraz 
+      - zmień `9376` na `8080` (te same porty, które użyliśmy w laboratorium o klastrach).
     
 	<br/>
 	
-	c. Click `Create`
+	c. Kliknij `Create`
 
    
-    **(After update)**
+    **(Po aktualizacji)**
     ![Create Service Params After](../images/CreateService_after.jpg)
 
     <br/>
 	
-3. After the service is created, click on the **`YAML`** tab:
+3. Po utworzeniu usługi, kliknij w zakładkę **`YAML`**:
 
     ![Create Service After YAML ](../images/CreateServiceAfterYAML.jpg)
 
-    The YAML file looks like:
+    Plik YAML wygląda następująco:
     ```yaml
     kind: Service
     apiVersion: v1
@@ -387,7 +386,8 @@ A **`service`** enables the pods we just created to be load balanced within the 
       loadBalancer: {}
     ```
 
-4. Note that for this service, there is a cluster wide IP address created, and that it is being load balanced. Also session affinity is not set for this service.
+4. Zwróć uwagę, że dla tej usługi została utworzona adresacja IP obowiązująca w całym klastrze (cluster-wide IP address) oraz że usługa ta jest ma load balancing.
+Dodatkowo, nie ustawiono session affinity dla tej usługi.
 
 ### First Route
 
