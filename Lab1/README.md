@@ -479,7 +479,7 @@ Trasa (Route) udostępnia Twoje wewnętrzne punkty końcowe (endpoints) na zewn�
 
     <br/>
 
-7. Kliknij **`down arrow`** aby zmiejszyć replica size do 1:
+7. Kliknij **`strzałkę w dół`** aby zmiejszyć replica size do 1:
 
     ![Reduce Deployment](../images/DeploymentReducePod.png)
 
@@ -511,17 +511,17 @@ The command line tools may be used to:
 - Delete resources
 
 
-###  Command Line Terminal
+###  Termial Linii Poleceń (Command Line Terminal)
 
-The `oc` command is already installed on your VM's terminal.
+Komenda `oc` jest już zainstalowana na Twojej maszynie wirtualnej.
 
-1. Open a new `Terminal` window on the Desktop VM:
+1. Otwórz nowe okno `Terminal` na pulpicie maszyny wirtualnej :
    
     ![terminal](../images/checkenv1.png)
    
     <br/>
    
-2. If you have not yet cloned the GitHub repo with the lab artifacts, in a previous lab, run the following command on your terminal:
+2. Jeśli nie sklonowałeś jeszcze repozytorium GitHub z materiałami do laboratorium w poprzednim ćwiczeniu, uruchom następujące polecenie w swoim terminalu:
 
 ```   
   cd /home/techzone
@@ -529,17 +529,17 @@ The `oc` command is already installed on your VM's terminal.
   git clone https://github.com/IBMTechSales/appmod-pot-labfiles.git 
 ```
 
-3. Change directory to:  `appmod-pot-labfiles/labs/IntroOpenshift`
+3. Zmień katalog na:  `appmod-pot-labfiles/labs/IntroOpenshift`
 
 
         cd /home/techzone/appmod-pot-labfiles/labs/IntroOpenshift
     
 
-### Login to OpenShift
+### Logowanie do OpenShift
 
-1. Login to OpenShift CLI with the `oc login` command from the terminal. 
+1. Zaloguj się OpenShift CLI komendą `oc login` na terminalu. 
 
-   When prompted for the username and password, enter the following login credentials:
+   Gdy zostaniesz poproszony o nazwę użytkownika i hasło, wprowadź następujące dane logowania:
 
     Username: `ocadmin`
 
@@ -549,7 +549,7 @@ The `oc` command is already installed on your VM's terminal.
 
     <br/> 
 
-    After login, the project last accessed is displayed, and it may or may not be the `default` project shown below:
+   Po zalogowaniu wyświetlany jest ostatnio używany projekt, który może, ale nie musi być projektem `default`, jak pokazano poniżej:
 
     ![Login1](../images/login.png)
    
