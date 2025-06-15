@@ -430,65 +430,66 @@ Trasa (Route) udostępnia Twoje wewnętrzne punkty końcowe (endpoints) na zewn�
 
 <br/>
 
-### Changing Replica Instances
+### Zmiana liczby instancji replik (Replica Instances)
 
-1. Click on the **`Projects`** tab under **`Home`** from the left navigation, then type `myproject` in the **filter** field:
+1. Kliknij na zakładkę **`Projects`** w sekcji **`Home`** z lewego menu nawigacyjnego, a następnie wpisz `myproject` w polu **filter**:
 
     ![Filter Project](../images/filterProject.png)
 
-2. Click on `myproject`:
+2. Kliknij w  `myproject`:
 
     ![Locate Myproject](../images/selectMyProject.png)
 
     <br/>
 
-3. Scroll down to the `Inventory` section to see the resources that were created. Recall that we have created one deployment with 2 pods in the specification. We also created one service, and one route.
+3. Przewiń w dół do sekcji `Inventory`, aby zobaczyć utworzone zasoby. Przypomnij sobie, że utworzyliśmy jeden deployment ze specyfikacją zawierającą 2 pods. Utworzyliśmy także jedną service oraz jedną route.
 
     ![Locate Myproject Resoruces](../images/LocateMyprojectResources.png)
 
     <br/>
 
-4. Under the **Inventory** section, click on the **2 pods** link:
+4. W sekcji **Inventory** kliknij w link **2 pods**:
 
     ![Locate Myproject Resoruces](../images/LocateMyprojectPods.png)
 
      <br/>
 
-5. Delete one of the pods by clicking on the menu on the right, then selecting `Delete pod`. When prompted, click `Delete`.
+5. Usuń jeden z pods, klikając ikonę menu po prawej stronie, a następnie wybierając `Delete pod`.  Gdy pojawi się monit, kliknij `Delete`.
 
     ![Delete Pod](../images/DeletePod.png)
 
-    a. Click `Delete` to confirm the deletion of the pod 
+    a. Kliknij `Delete` aby potwierdzić usunięcie poda 
 
     ![Delete Pod](../images/confirmDeletePod.png)
 
 
-    This is not the right way to reduce number of instances. You will notice that as soon as one of the pods is being terminated, another one is being created. 
+    To nie jest właściwy sposób na zmniejszenie liczby instancji. Zauważysz, że zaraz po tym, jak jeden z podów zostanie usunięty, zostaje automatycznie utworzony nowy.
     
-    The reason is that the controller for the `deployment` resource knows that your specification is for **2 instances**, and it honors that specification by creating another one. This also gives you automatic failure recovery should one of the pods crashes on its own.
+    Dzieje się tak dlatego, że kontroler zasobu `deployment` wie, że w specyfikacji zadeklarowano **2 instances**, trzyma się tej liczby, tworząc nową instancję w miejsce usuniętej.
+    To mechanizm, który zapewnia automatyczne odzyskiwanie po awarii, jeśli któryś z podów samoczynnie ulegnie awarii.
 
     ![Delete Pod](../images/DeletePodRecreate.png)
 
  
     <br/>
 
-6. To change the number of instances, you will need to change the specification of your deployment. Click on the **`Deployments`** tab under **`Workloads`** in the left navigation, then click on `example` deployment:
+6. Aby zmienić liczbę instancji, musisz zmodyfikować specyfikację swojego deployment. Kliknij zakładkę  **`Deployments`** w sekcji **`Workloads`** w lewym menu nawigacyjnym, a następnie kliknij `example`:
 
     ![Locate Deloyment](../images/LocateDeployment.png)
 
     <br/>
 
-7. Click on the **`down arrow`** to reduce the replica size down to 1:
+7. Kliknij **`down arrow`** aby zmiejszyć replica size do 1:
 
     ![Reduce Deployment](../images/DeploymentReducePod.png)
 
     <br/>
 
-8. After the operation is completed, click on the **`YAML`** tab:
+8. Kiedy operacja się zakończy kliknij w zakładkę **`YAML`**:
 
     ![Reduce Deployment](../images/DeploymentReducePod1.png)
 
-    Note that the console had changed the REST specification on your behalf so that the replica count is now 1:
+    Zwróć uwagę, że konsola automatycznie zmieniła specyfikację REST w Twoim imieniu, tak że liczba replicas wynosi teraz 1.
 
 
     ![Reduce Deployment YAML](../images/DeploymentReducePod1YAML.png)
