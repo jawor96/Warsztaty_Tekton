@@ -390,17 +390,17 @@ Serwis (**`service`**) umolżliwia równoważenie obciążenia pomiędzy podami,
 4. Zwróć uwagę, że dla tej usługi została utworzona adresacja IP obowiązująca w całym klastrze (cluster-wide IP address) oraz że usługa ta jest ma load balancing.
 Dodatkowo, nie ustawiono session affinity dla tej usługi.
 
-### First Route
+### Pierwszy route (trasa)
 
-A route exposes your internal endpoints outside your cluster's built-in firewall. 
+Trasa (Route) udostępnia Twoje wewnętrzne punkty końcowe (endpoints) na zewnątrz klastra, omijając jego wbudowaną zaporę sieciową (firewall).
 
-1. Click on the **`Route`** tab under **`Networking`** in the left navigation, then click **`Create Route`**:
+1. Kliknij zakładkę **`Route`** wewnątrz **`Networking`** w menu po lewej stronie, a następnie **`Create Route`**:
 
     ![Create Route](../images/CreateRoute.jpg)
 
     <br/>
 
-2. Supply input to the following parameters:
+2. Podaj dane wejściowe dla następujących parametrów:
 
     - Name: `example`
     - Service: `example`
@@ -411,23 +411,22 @@ A route exposes your internal endpoints outside your cluster's built-in firewall
 
     ![Create Route Parameters](../images/CreateRouteParams.jpg)
 
-    Note that we are ignoring TLS configuration just for the purpose of this lab.  Security will be addressed in a different lab.
-
+    Zwróć uwagę, że na potrzeby tego laboratorium pomijamy konfigurację TLS. Kwestie związane z bezpieczeństwem zostaną omówione w innym laboratorium.
     <br/>
 
-3. Access the route at the link provided under the `Location` field of the Route resource. The route location will open in a new browser tab.
+3. Uzyskaj dostęp do trasy (Route), klikając link podany w polu `Location` zasobu Route. Adres trasy otworzy się w nowej karcie przeglądarki.
 
     ![Create Route](../images/CreateRouteAccessRoute.jpg)
 
     <br/>
 
-4. If you have configured everything correctly, the browser will show the  `Red Hat Enterprise Linux Test page`. 
+4. Jeśli wszystko zostało poprawnie skonfigurowane, przeglądarka wyświetli stronę aplikacji, która została wdrożona w klastrze.  `Red Hat Enterprise Linux Test page`. 
 
   ![Create Route](../images/CreateRouteAccessRouteResult.jpg)
 
 <br/>
 
-**Congratulations**, you just deployed your first application to Openshift.
+**Gratulacje**, właśnie uruchomiłeś swoją pierwszą aplikację korzystając z Openshift.
 
 <br/>
 
