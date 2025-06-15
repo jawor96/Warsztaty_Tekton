@@ -309,6 +309,7 @@ Serwis (**`service`**) umolżliwia równoważenie obciążenia pomiędzy podami,
 2. Zaktualizuj parametry w pliku `YAML`:
     
     **(Przed aktualizacją)**
+    
     ![Create Service Params Before](../images/CreateService_before.jpg)
     
     a. W sekcji spec.selector: 
@@ -327,8 +328,8 @@ Serwis (**`service`**) umolżliwia równoważenie obciążenia pomiędzy podami,
 	
 	c. Kliknij `Create`
 
-   
     **(Po aktualizacji)**
+
     ![Create Service Params After](../images/CreateService_after.jpg)
 
     <br/>
