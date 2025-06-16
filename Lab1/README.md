@@ -554,18 +554,18 @@ Komenda `oc` jest już zainstalowana na Twojej maszynie wirtualnej.
     ![Login1](../images/login.png)
    
 
-### Listing resources
+### Wyświetlanie zasobów (resources)
 
-2. Use `oc api-resources` to list all available resource kinds. 
+2. Użyj polecenia `oc api-resources`, aby wyświetlić wszystkie dostępne typy zasobów. 
 
-    Note that resources in Openshift have a `group`, `version`, and `kind`. 
-Some resources are global (not in a namespace), while others are scoped to a `namespace`.
+    Zwróć uwagę, że zasoby w OpenShift mają atrybuty: `group`, `version`, oraz `kind`. 
+Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas gdy inne są przypisane do konkretnej `namespace`.
 
-    Many resources also have short names to save typing when using the command line tool.
+    Wiele zasobów posiada również skrócone nazwy, które ułatwiają wpisywanie poleceń w narzędziu wiersza poleceń.
 
-    For example, you may use `cm` instead of `ConfigMap` as a command line parameter when the parameter is for a `KIND`.
+    Na przykład, zamiast używać pełnej nazwy ConfigMap, możesz użyć skrótu cm jako parametru `KIND`.
 
-    **Example output:**
+    **Przykładowy wynik:**
 
     ```
     NAME                                  SHORTNAMES       APIGROUP                              NAMESPACED   KIND
@@ -581,9 +581,9 @@ Some resources are global (not in a namespace), while others are scoped to a `na
     ```
 
 
-### Listing instances of a resource kind
+### Wyświetlanie instancji danego rodzaju zasobów
 
-3. List all projects: `oc get projects`
+3. Wyświetl wszystkie projekty: `oc get projects`
 
     ```
     NAME          DISPLAY NAME   STATUS
@@ -598,7 +598,7 @@ Some resources are global (not in a namespace), while others are scoped to a `na
     ```
 
 
-4. List all pods in all namespaces: `oc get pods --all-namespaces`
+4. Wyświetl wszystkie pody w przestrzeniach nazw (namespaces): `oc get pods --all-namespaces`
 
     ```
     NAMESPACE                                          NAME                                                              READY   STATUS      RESTARTS       AGE
@@ -612,7 +612,7 @@ Some resources are global (not in a namespace), while others are scoped to a `na
     ...
     ```
 
-5.  List all pods within a namespace: `oc get pods -n myproject`
+5.  Wyświetl wszystkie pody w obrębie namespace: `oc get pods -n myproject`
 
     ```
     NAME                       READY   STATUS    RESTARTS   AGE
@@ -621,9 +621,9 @@ Some resources are global (not in a namespace), while others are scoped to a `na
      
 
 
-### Projects
+### Projekty (projects)
 
-6. List all projects: `oc get projects`
+6. Wyświetl wszystkie projekty: `oc get projects`
 
     ```
     NAME          DISPLAY NAME   STATUS
