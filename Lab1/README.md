@@ -694,7 +694,7 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
    oc get project project1 -o yaml
    ```
 
-   Wynik specyfikacji zasobu w formacie **yaml**
+   Wynik specyfikacji zasobu w formacie **yaml**:
 
     ```yaml
     apiVersion: project.openshift.io/v1
@@ -728,20 +728,20 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
 
 #### Pierwszy Deployment
 
-1. In th terminal window, under the directory where you cloned the labs repository `(/home/techzone/appmod-pot-labfiles/labs/IntroOpenshift)`, you will find `Deployment.yaml`, which you will use to deploy the `httpd` application using the OpenShift CLI.   
+1. W oknie terminala, w katalogu, w którym sklonowałeś repozytorium z materiałami do labów `(/home/techzone/appmod-pot-labfiles/labs/IntroOpenshift)`, znajdź `Deployment.yaml`, który wykorzystasz do deploymentu aplikacji `httpd` przy użyciu OpenShift CLI.   
 
         cd /home/techzone/appmod-pot-labfiles/labs/IntroOpenshift
 
         ls -l
 
-     Output:
+     Wynik:
      ```
      -rw-rw-r-- 1 techzone techzone 669 Feb 13 11:48 Deployment.yaml
      -rw-rw-r-- 1 techzone techzone 171 Feb 13 11:48 Route.yaml
      -rw-rw-r-- 1 techzone techzone 197 Feb 13 11:48 Service.yaml
      ```
 	 
-2. Review the contents of `Deployment.yaml`  
+2. Przejrzyj zawartość pliku  `Deployment.yaml`  
 
      ```
      clear
@@ -749,7 +749,7 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
      cat Deployment.yaml
      ```
 
-     This allows us to deploy the same image in a different project. Using the same image customized for different environments is an important concept that will be covered further in future labs.
+     To pozwala nam wdrożyć ten sam obraz w innym projekcie. Używanie tego samego obrazu dostosowanego do różnych środowisk to ważna koncepcja, która zostanie szerzej omówiona w kolejnych laboratoriach.
 
 
      ```yaml
@@ -785,25 +785,25 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
      ```
 
 
-3. Apply the deployment via the command line: 
+3. Zastosuj wdrożenie za pomocą wiersza poleceń:
 
     ```
     oc apply -f Deployment.yaml
     ```
 
-    After applying the yaml, you will see a message that the deployment resource  was created
+    Po zastosowaniu pliku YAML zobaczysz komunikat, że zasób deployment został utworzony.
 
     ```
     deployment.apps/example created
     ```
     
-4. Check the status of deployment: 
+4. Sprawdź status wdrożenia:
 
     ```
     oc get deployment example -o wide
     ```
 
-    There should be 2 of 2 pods in the READY state: 
+    Powinny być 2 z 2 podów ze statusem READY: 
 
     ```
     NAME      READY   UP-TO-DATE   AVAILABLE   AGE    CONTAINERS IMAGES                                                                    SELECTOR
@@ -811,16 +811,16 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
 
     ```
 
-    If the status does not show available **`READY 2/2`**, wait a few seconds, then rerun the command.
+    Jeśli status nie pokazuje **`READY 2/2`**, poczekaj kilka sekund, a następnie uruchom ponownie polecenie.
 
    
 
-5. List the running pods created by the controller for the deployment: 
+5. Wyświetl uruchomione pody utworzone przez kontroler dla wdrożenia:
    ```
    oc get pods
    ```
 
-    The pods should be in the **`Running`** state
+    Pody powinny być w stanie **`Running`**
 
     ```
     NAME                      READY   STATUS    RESTARTS   AGE
@@ -829,12 +829,12 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
 
    ```
 
-6. Show the logs of one of the pods: `oc logs <pod name>`
+6. Wyświetl logi jednego z podów: `oc logs <pod name>`
 
-   **Note:** `\<pod name\>` is the name of the pods from the `oc get pods` command in the previous step. 
+   **Uwaga:** `\<pod name\>` to nazwa poda uzyskana z polecenia `oc get pods` w poprzednim kroku. 
 
  
-7. Take a look at `Service.yaml` and note that it's for the `project1` namespace:
+7. Przejrzyj plik `Service.yaml`  i zauważ, że jest przypisany do przestrzeni nazw `project1`:
 
     ```
     clear
@@ -842,7 +842,7 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
     cat Service.yaml
     ```
 
-    Example output:
+    Przykładowy wynik:
 
     ```yaml
     apiVersion: v1
@@ -860,29 +860,29 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
       type: ClusterIP
     ```
 
-    Notice tha **selector** set to **app: httd** which means the service willload balance pods with label `app: httpd` within the `project1` namespace: 
+    Zauważ, że **selector** jest ustawwiony na  **app: httd** , co oznacza, że usługa będzie równoważyć obciążenie pomiędzy podami z etykietą app `app: httpd` w przestrzeni nazw `project1`: 
 
-8. Create the service. 
+8. Utwórz usługę. 
     
     ```
     oc apply -f Service.yaml
     ```
  
-    The service is created
+    Usługa została utworzona.
 
     ```
     service/example created
     ```
 
-9. Examine Route.yaml:
+9. Przejrzyj plik Route.yaml:
     ```
     clear
     
     cat Route.yaml
     ```
    
-    Notice the route targets the **exmple** Service  
-    Output:
+   Zwróć uwagę, że trasa kieruje ruch do usługi **exmple**  
+    Wynik:
    
     ```yaml
     apiVersion: route.openshift.io/v1
@@ -898,37 +898,37 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
         name: example
     ```
 
-10. Apply the route to make the service reachable from outside the cluster: 
+10. Aby zastosować trasę i udostępnić usługę spoza klastra, użyj poniższego polecenia:
     
     ```
     oc apply -f Route.yaml
     ```
     
-    The route is created
+    Trasa została utworzona. 
 
     ```
     route.route.openshift.io/example created
     ```
 
-11. Use the following command to get the URL for the route. Then open the URL in the Browser on the VM: 
+11. Użyj poniższego polecenia, aby uzyskać adres URL trasy (route). Następnie otwórz ten adres URL w przeglądarce na maszynie wirtualnej (VM): 
    
     ```
     echo http://$(oc get route example --template='{{ .spec.host }}')
     ```
-    Output:
+    Wynik:
    
     ```
     http://example-project1.apps.ocp.ibm.edu
     ```
 
-12. Open your Firefox browser again and visit the URL outputted by the previous command. You should see a web page displaying the following message:
+12. Otwórz ponownie przeglądarkę Firefox i odwiedź adres URL wyświetlony przez poprzednie polecenie. Powinieneś zobaczyć stronę internetową z następującym komunikatem:
 
     ![firstapplication1](../images/httpdApp.png)
 
 
-### Changing Replica Instance
+### Zmiana Replica Instance
 
-1. List pods: `oc get pods`
+1. Wyświetl pody: `oc get pods`
 
     ```
     NAME                      READY   STATUS    RESTARTS   AGE
@@ -936,15 +936,15 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
     example-75778c488-c9jhd   1/1     Running   0          60m
     ```
 
-2. Delete one of the pods: `oc delete pod <pod name>`
+2. Usuń jeden z podów: `oc delete pod <pod name>`
 
     ```
     pod "example-764854fb5-lhdm7" deleted
     ```
 
-3. List pods again and note that a new instance has been created as expected. The deployment specified 2 instances, so the controller tries to maintain 2 instances: `oc get pods`
+3. onownie wyświetl listę podów i zauważ, że została utworzona nowa instancja, zgodnie z oczekiwaniami. W specyfikacji wdrożenia określono 2 instancje, więc kontroler stara się utrzymać ich liczbę na poziomie 2: `oc get pods`
 
-  **Note:** New pod is automaticially started
+  **Uwaga:** Nowy pod został automatycznie uruchomiony.
 
     ```
     NAME                      READY   STATUS    RESTARTS   AGE
@@ -952,9 +952,9 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
     example-764854fb5-s5f68   1/1     Running   0          44m
     ```
 
-4. To cange the number of pods, you can patch the resource in one of two ways:
+4. Aby zmienić liczbę podów, możesz zaktualizować (patchować) zasób na jeden z dwóch sposobów:
    
-     - Scripted patch using the `patch` option of the command line: This command reduces the number of pods to 1. 
+     - Sposób ze skryptowaną aktualizacją przy użyciu opcji patch w wierszu poleceń: To polecenie zmniejsza liczbę podów do 1. 
       
 	     ```
          oc patch deployment example -p '{ "spec": { "replicas": 1 } }'
