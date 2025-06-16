@@ -967,26 +967,26 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
        example-764854fb5-s5f68   1/1     Running   0          47m
        ``` 
 
-     - Interactive patch using the `edit` option of the command line through `vi` editor:
+     - Interaktywna aktualizacja przy użyciu opcji `edit` w wierszu poleceń z edytorem `vi`:
      
 	     ```
          oc edit deployment example
        ```
       
-	  Under the `spec` section (not under the `status` section), change `replicas: 1` to `replicas: 2`, and **save** the change in the vi editor (by `:wq`).
+	  W sekcji `spec` (nie w sekcji `status`), zmień `replicas: 1` na `replicas: 2`, i zapisz (**save**) zmianę w edytorze vi (`:wq`).
 
-      The output:
+      Wynik:
       ```
       deployment.extensions/example edited
       ```
 
-5. List the pods to show 2 pods runing after issueing the previous commands: 
+5. Wyświetl pody, aby sprawdzić czy 2 pody działają po wykonaniu poprzednich poleceń:
 
     ```
     oc get pods
     ```
 
-    If you edited and saved the resource in the previous step, there will be two pods running. 
+   Jeśli edytowałeś i zapisałeś zasób w poprzednim kroku, będą działały dwa pody.
 
     ```
     NAME                      READY   STATUS    RESTARTS   AGE
@@ -995,41 +995,41 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
     ```
 
 
-     **Note:** The above edits the copy that is stored in Openshift. You may also edit your local copy of `Deployment.yaml` and re-apply it.
+     **Uwaga:** Powyższe edytuje kopię przechowywaną w Openshift. Możesz również edytować swoją lokalną kopię pliku  `Deployment.yaml` i ponownie ją zastosować.
 
       <br/>
 
 
-6. Edit the `Deployment.yaml` on the VM, and re-apply the updates
+6. Zedytuj plik `Deployment.yaml` na maszynie wirtualnej, i ponownie zastosuj zmiany.
 
-    a. From a `Terminal` window, change to the lab directory foler where the `Deployment.yaml` file resides
+    a. Z okna `Terminal`, przejdź do katalogu gdzie znajudje się plik `Deployment.yaml`
 
         cd  /home/techzone/appmod-pot-labfiles/labs/IntroOpenshift
 
-    b. Use gedit to edit the `Deployment.yaml` file
+    b. Użyj gedit, aby zedytować plik `Deployment.yaml`
 
         gedit ./Deployment.yaml
 
     ![firstapplication1](../images/geditDeployment.png)
 
 
-    c. `Save` the Deployment.yaml file
+    c. `Zapisz` plik Deployment.yaml 
 
-    d. Re-Apply the Deployment
+    d. Ponownie zastosuj wdrożenie (Re-Apply the Deployment).
 
         oc apply -f ./Deployment.yaml
 
-    The example deployment has been re-applied. 
+    Przykładowe wdrożenie zostało ponownie zastosowane.
 
         deployment.apps/example configured
         
-7. List the pods again to see that `3` pods are now running
+7. Ponownie wyświetl listę podów, aby zobaczyć, że teraz uruchomione są `3` pody.
 
     ```
     oc get pods
     ```
 
-    Three pods running
+    Trzy pody są uruchomione. 
 
     ```
     NAME                      READY   STATUS    RESTARTS   AGE
@@ -1039,7 +1039,7 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
     ```
 
 
-8. Cleanup:
+8. Czyszczenie (Cleanup):
     
     ```
     oc delete route example
@@ -1049,16 +1049,16 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
     oc get pods  
     ``` 
 
-    The Output should state that no resources found in the project
+    Wynik powinien wskazywać, że nie znaleziono żadnych zasobów w projekcie.
 
     ```
     No resources found in project1 namespace.
     ```
    
-   **Note:** You may have to run the **oc get pods** command a few times, to wait for the pods to be deleted.
+   **Uwaga:** Może być konieczne kilkukrotne wykonanie polecenia **oc get pods** , aby poczekać na usunięcie wszystkich podów.
 
 <br/>
 
-Congratulations, you have deployed your first application to Openshift via the command line.
+Gratulacje, wdrożyłeś swoją pierwszą aplikację do OpenShift za pomocą linii poleceń.
 
-END OF LAB
+KONIEC LABORATORIUM
