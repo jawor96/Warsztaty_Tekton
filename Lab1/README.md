@@ -637,64 +637,64 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
     ...
     ```
 
-7. Get current project: `oc project` (Note: current project may not be `default` as shown below):
+7. Pobierz bieżący projekt:  `oc project` (Uwaga: bieżącym projektem nie musi być `default`, jak pokazano poniżej):
 
     ```
-   Using project "default" on server "https://api.ocp.ibm.edu:6443".
+   Wykorzystując projekt "default" na serwerze "https://api.ocp.ibm.edu:6443".
     ```
 
-8. Change to a specific project
+8. Zmiana na konkretny projekt
 
     ```
     oc project myproject
     ```
 
     ```
-    Now using project "myproject" on server "https://api.ocp.ibm.edu:6443".
+    Obecnie korzystasz z projektu "myproject" na serwerze "https://api.ocp.ibm.edu:6443".
     ```
 
 
-4. Create a new project and make it the current project: 
+4. Utwórz nowy projekt i ustaw go jako bieżący projekt:
      ```
      oc new-project  project1
      ```   
 
-    The output from creating a new project:
+    Wynik utworzenia nowego projektu:
 
     ```
-    Now using project "project1" on server "https://api.ocp.ibm.edu:6443".
+    Teraz korzystasz z projektu "project1" na serwerze "https://api.ocp.ibm.edu:6443".
 
-    You can add applications to this project with the 'new-app' command. For example, try:
+    Możesz dodać aplikacje do tego projektu za pomocą polecenia 'new-app' command. Na przykład, spróbuj:
 
     oc new-app rails-postgresql-example
 
-    to build a new example application in Ruby. Or use kubectl to deploy a simple Kubernetes application:
+    aby zbudować przykładową nową aplikację w Ruby lub użyj kubectl, aby wdrożyć prostą aplikację w Kubernetes:
 
     kubectl create deployment hello-node --image=k8s.gcr.io/e2e-test-images/agnhost:2.33 -- /agnhost serve-hostname
     ```
 
 
-5. Switch to the `default` project: 
+5. Zmień projekt na `default`: 
    ```
    oc project default
    ```
 
 
-6. Switch back to `project1`: 
+6. Przełącz z powrotem na `project1`: 
    ```
    oc project project1
    ```
 
-    Output: 
+    Wynik: 
    
-        Now using project "project1" on server "https://api.ocp.ibm.edu:6443".
+        Teraz korzystasz z projektu "project1" na serwerze "https://api.ocp.ibm.edu:6443".
 
-7. View the REST specification of the project: 
+7. Wyświetl specyfikację REST projektu:
    ```
    oc get project project1 -o yaml
    ```
 
-   The output of the resource specification in **yaml**
+   Wynik specyfikacji zasobu w formacie **yaml**
 
     ```yaml
     apiVersion: project.openshift.io/v1
@@ -724,9 +724,9 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
       phase: Active
     ```
 
-### First Application
+### Pierwsza Aplikacja
 
-#### First Deployment
+#### Pierwszy Deployment
 
 1. In th terminal window, under the directory where you cloned the labs repository `(/home/techzone/appmod-pot-labfiles/labs/IntroOpenshift)`, you will find `Deployment.yaml`, which you will use to deploy the `httpd` application using the OpenShift CLI.   
 
