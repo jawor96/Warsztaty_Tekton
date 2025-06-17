@@ -22,11 +22,11 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
 
 1.  Dostań się do środowiska laboratoryjnego przez przeglądarkę internetową. 
      
-    `Środowisko Laboratoryjne` jest skonfigurowany tak, aby zapewnić dostęp do maszyny wirtualnej **`Stacji roboczej`** poprzez interfejs noVNC.
+    `Środowisko Laboratoryjne` jest skonfigurowane tak, aby zapewnić dostęp do maszyny wirtualnej **`stacji roboczej`** poprzez interfejs noVNC.
     
     a. Otwórz link otrzymany przez instruktora w przeglądarce internetowej. 
 
-    b. Kliknij na link **`Published Service`**, który wyświetli **Spis katalogów**  
+    b. Kliknij na link **`Published Service`**, który wyświetli **Spis katalogów**.  
     
     c. Kliknij na link **`vnc.html`**, aby otworzyć środowisko laboratoryjne poprzez interfejs **noVNC**. 
     
@@ -39,7 +39,7 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
 
     e. Wpisz hasło:  **`passw0rd`**. Następnie kliknij **`Send Credentials`**, aby otworzyć środowisko laboratoryjne. 
 
-    > Uwaga: Tam jest numeryczne zero w haśle: passw0rd  
+    > Uwaga: W haśle jest numeryczne zero: passw0rd  
 
       ![](../images/vnc-password.png)
 
@@ -54,7 +54,7 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
 
      - Password: **IBMDem0s!**
 
-     > Uwaga: Tam jest numeryczne zero w haśle: passw0rd
+     > Uwaga: W haśle jest numeryczne zero: passw0rd  
 
    <br>
  
@@ -119,6 +119,7 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
 
      ![console](../images/loginconsole3.png)
 
+<br/>
 
 ### Overview - Informacje ogólne
 
