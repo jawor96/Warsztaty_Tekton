@@ -947,9 +947,9 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
 
 3. Ponownie wyświetl listę podów i zwróć uwagę, że zgodnie z oczekiwaniami została utworzona nowa instancja. W specyfikacji wdrożenia określono 2 instancje, więc kontroler stara się utrzymać ich liczbę na poziomie 2:
 
-```
- `oc get pods`
-```
+    ```
+    `oc get pods`
+    ```
   **Uwaga:** Nowy pod został automatycznie uruchomiony.
 
     ```
