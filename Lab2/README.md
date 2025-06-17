@@ -1,6 +1,6 @@
 # Wstęp do Tektona
 
-Tekton to wszechstronne, natywne dla Kubernetes narzędzie do tworzenia systemów ciągłej integracji i dostarczania (CI/CD). Na tym warsztacie, dowiesz się, jak:
+Tekton to wszechstronne, natywne narzędzie dla Kubernetes służące do tworzenia systemów ciągłej integracji i dostarczania (CI/CD). Podczas tego warsztatu, dowiesz się, jak:
 - zainstalować Tekton (Pipelines) na OpenShift, 
 - tworzyć Zadania (**Tasks**),
 -  a ostatecznie zbudować własny **Pipeline**.
