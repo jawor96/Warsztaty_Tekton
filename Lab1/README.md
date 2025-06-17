@@ -561,7 +561,7 @@ Komenda `oc` jest już zainstalowana na Twojej maszynie wirtualnej.
 2. Użyj polecenia `oc api-resources`, aby wyświetlić wszystkie dostępne typy zasobów. 
 
     Zwróć uwagę, że zasoby w OpenShift mają atrybuty: `group`, `version`, oraz `kind`. 
-Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas gdy inne są przypisane do konkretnej `namespace`.
+Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas gdy inne są przypisane do konkretnej przestrzeni naze (`namespace`).
 
     Wiele zasobów posiada również skrócone nazwy, które ułatwiają wpisywanie poleceń w narzędziu wiersza poleceń.
 
@@ -642,7 +642,7 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
 7. Pobierz bieżący projekt:  `oc project` (Uwaga: bieżącym projektem nie musi być `default`, jak pokazano poniżej):
 
     ```
-   Wykorzystując projekt "default" na serwerze "https://api.ocp.ibm.edu:6443".
+   Using project "default" on server "https://api.ocp.ibm.edu:6443".
     ```
 
 8. Zmiana na konkretny projekt
@@ -652,7 +652,7 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
     ```
 
     ```
-    Obecnie korzystasz z projektu "myproject" na serwerze "https://api.ocp.ibm.edu:6443".
+     Now using project "myproject" on server "https://api.ocp.ibm.edu:6443".
     ```
 
 
@@ -664,13 +664,13 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
     Wynik utworzenia nowego projektu:
 
     ```
-    Teraz korzystasz z projektu "project1" na serwerze "https://api.ocp.ibm.edu:6443".
+    Now using project "project1" on server "https://api.ocp.ibm.edu:6443".
 
-    Możesz dodać aplikacje do tego projektu za pomocą polecenia 'new-app' command. Na przykład, spróbuj:
+    You can add applications to this project with the 'new-app' command. For example, try:
 
     oc new-app rails-postgresql-example
 
-    aby zbudować przykładową nową aplikację w Ruby lub użyj kubectl, aby wdrożyć prostą aplikację w Kubernetes:
+    to build a new example application in Ruby. Or use kubectl to deploy a simple Kubernetes application:
 
     kubectl create deployment hello-node --image=k8s.gcr.io/e2e-test-images/agnhost:2.33 -- /agnhost serve-hostname
     ```
