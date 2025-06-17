@@ -2,14 +2,14 @@
 
 Tekton to wszechstronne, natywne narzędzie dla Kubernetes służące do tworzenia systemów ciągłej integracji i dostarczania (CI/CD). Podczas tego warsztatu, dowiesz się, jak:
 - zainstalować Tekton (Pipelines) na OpenShift, 
-- tworzyć Zadania (**Tasks**),
--  a ostatecznie zbudować własny **Pipeline**.
+- tworzyć Zadania (**Tasks**), oraz
+- zbudować własny **Pipeline**.
 
 ## Wymagania wstępne
 
 Aby wykonać laboratorium, należy:
 
-1. Mieć dostęp do środowiska laboratoryjnego z OCP - Instrukcje dostarcza prowadzący.
+1. Mieć dostęp do środowiska laboratoryjnego z OCP - instrukcje dostarcza prowadzący.
 
 ## Tasks - Wstęp
 
@@ -20,21 +20,21 @@ W tym ćwiczeniu dowiesz się jak:
 2. Zainicjować i uruchmomić **Task** z wykorzystniem `TaskRun`.
 2. Dodać parametr do **Task**.
 
-### Instalacja Tektoana z wykorzystaniem Operatora
+### Instalacja Tektona z wykorzystaniem Operatora
 
-1.  Zaloguj się do konsoli OpenShift
+1.  Zaloguj się do konsoli OpenShift.
 
     a.  Otwórz przeglądarkę `Firefox`.
 
     b.  Kliknij zakładkę **`OpenShift Console`** na pasku narzędzi zakładek.
 
-    c.  Dane logowania:
+    c.  Dane logowania to:
 
     - Username: `ocadmin`
 
     - Password: `ibmrhocp`
 
-2.  Zainstaluj **Red Hat OpenShift Pipelines** `Operator`
+2.  Zainstaluj **Red Hat OpenShift Pipelines** `Operator`.
 
     a.  Kliknij na **`Operators > OperatorHub`** w menu po lewej stronie.
 
@@ -44,11 +44,11 @@ W tym ćwiczeniu dowiesz się jak:
 
     c. Kliknij `Install`.
 
-    d. Pozostaw wszystkie ustawienia domślne i ponowanie kliknij. `Install`.
+    d. Pozostaw wszystkie ustawienia domyślne i ponownie kliknij `Install`.
 
-    e. Zaakceptuj instalacje, klikając `Approve`
+    e. Zaakceptuj instalację, klikając `Approve`.
 
-    f. Poczekaj, az moduł się zainstaluje i odświez przeglądarkę.
+    f. Poczekaj, aż moduł się zainstaluje i odśwież przeglądarkę.
 
     g. W pasku po lewej stronie pojawi się zakładka **Pipelines**.
 
@@ -65,7 +65,7 @@ Aby sworzyć **Task**, mozesz wykorzystać zarówno CLI jak i konsole OCP. W tym
 
    a.  Kliknij na **`Home > Projects`** w menu po lewej stronie.
 
-   b. W prawym górnym roku kliknij `Create Project`
+   b. W prawym górnym roku kliknij `Create Project`.
 
    c. Nazwij go `tekton-lab` i kliknij `Create`.
 
@@ -78,7 +78,7 @@ Aby sworzyć **Task**, mozesz wykorzystać zarówno CLI jak i konsole OCP. W tym
 
 <img src="../images/Tkt_02.png" width="70%">
 
-6. Pojawi się okno, gdzie mozesz zdefiniować *Task*. Pierwszy Task, który stworzysz wykorzysta obraz `Red Hat Universal Base Image` i wykona komende `echo`, aby się "przywitać". Wklej następującą definicje do okna i kliknij `Create`.
+6. Pojawi się okno, gdzie możesz zdefiniować *Task*. Pierwszy Task, który stworzysz wykorzysta obraz `Red Hat Universal Base Image` i wykona komendę `echo`, aby się "przywitać". Wklej następującą definicję do okna i kliknij `Create`.
 
 ```yaml
 apiVersion: tekton.dev/v1beta1
@@ -101,11 +101,11 @@ Przyjrzyj się definicji powyżej. Typ obiektu to `Task`. Dalej defniujesz nazw�
 
 ### Inicjalizacja Task'u.
 
-1. Aby zainicjalizować *Task*, należy stworzyć obiekt `TaskRun`. Kliknij `Creat`, a następnie `TaskRun`.
+1. Aby zainicjalizować *Task*, należy stworzyć obiekt `TaskRun`. Kliknij `Create`, a następnie `TaskRun`.
 
 <img src="../images/Tkt_04.png" width="70%">
 
-2. Pojawi się okno, gdzie mozesz zdefiniować *TaskRun*. Skopiuj definicje ponizej i wklej do konsoli OCP.
+2. Pojawi się okno w którym możesz zdefiniować *TaskRun*. Skopiuj definicję poniżej i wklej do konsoli OCP.
 
 ```yaml
 apiVersion: tekton.dev/v1beta1
@@ -120,7 +120,7 @@ spec:
 <img src="../images/Tkt_05.png" width="70%">
 
 3. Zaaplikuj `TaskRun`, klikając `Create`.
-4. Zostaniesz przeniesiony do zainicjalizowanego `TaskRun` w konsoli OCP. Poczekaj, az `TaskRun` zakończy prace z sukcesem.
+4. Zostaniesz przeniesiony do zainicjalizowanego `TaskRun` w konsoli OCP. Poczekaj, az `TaskRun` zakończy poprawnie pracę.
 
 <img src="../images/Tkt_06.png" width="70%">
 
@@ -131,7 +131,7 @@ spec:
 ### Wykorzystanie parametrów w Task'u
 
 1. Wróć do pulpitu `Tasks` i stwórz nowy **Task**, klikając `Create -> Task`.
-2. W oknie wklej następującą definicje zadania:
+2. W oknie wklej następującą definicję zadania:
 
 ```yaml
 apiVersion: tekton.dev/v1beta1
@@ -156,7 +156,7 @@ spec:
 Bazując na naszym przykładzie `witaj`, dodałeś parametr `osoba` z domyślną wartością. Aby uzyskać dostęp do nowego parametru, należy wywołać go za pomocą konstrukcji `$(params.osoba)`
 
 3. Wróc do puplitu `Tasks` i stwórz `TaskRun`, aby wywołać *Task*. Kliknij `Creat`, a następnie `TaskRun`.
-4. Wklej definicje `TaskRun`:
+4. Wklej definicję `TaskRun`:
 
 ```yaml
 apiVersion: tekton.dev/v1beta1
@@ -173,7 +173,7 @@ spec:
 
 <img src="../images/Tkt_09.png" width="70%">
 
-5. W `TaskRun` mozesz nadpisać wartość paramentru zamieniając wartość w polu `value`. Kliknij `Create`, aby zainicjalizować wykonanie zdaania.
+5. W `TaskRun` możesz nadpisać wartość paramentru zamieniając wartość w polu `value`. Kliknij `Create`, aby zainicjalizować wykonanie zdania.
 
 6. Zweryfikuj wykonanie komendy `echo` po zakończeniu zadania, przechodzać do zakładki `Logs`.
 
@@ -201,7 +201,7 @@ W tym ćwiczeniu dowiesz się jak:
     cd tekton-lab
     gedit rozmowa-task.yaml
     ```
-3.  wklej definicje `Tasku`:
+3.  Wklej definicję `Tasku`:
 
 ```yaml
 apiVersion: tekton.dev/v1beta1
@@ -229,7 +229,7 @@ spec:
 <img src="../images/Tkt_19.png" width="70%">
 
 2. Przeanalizuj `Task` i zapisz go.
-3. Teraz musimsz zalogować się do klastra OCP korzystając z CLI. Wróć do konsoli OCP i rozwiń nazwę swojego użytkownika, a następnie kliknij `Copy login command`.
+3. Teraz musisz się zalogować się do klastra OCP korzystając z CLI. Wróć do konsoli OCP i rozwiń nazwę swojego użytkownika, a następnie kliknij `Copy login command`.
 
 <img src="../images/Tkt_11.png" width="70%">
 
@@ -251,7 +251,7 @@ spec:
 
 <img src="../images/Tkt_15.png" width="40%">
 
-### Stwórz swój pierwsz Pipeline
+### Stwórz swój pierwszy Pipeline
 
 1. Ponownie otwórz edytor i stwórz nowy plik o nazwie `rozmowa-pipeline.yaml`.
 
@@ -259,7 +259,7 @@ spec:
 gedit rozmowa-pipeline.yaml
 ```
 
-2. Wklej definicje `Pipeline`: 
+2. Wklej definicję `Pipeline`: 
 
 ```yaml
 apiVersion: tekton.dev/v1beta1
@@ -305,7 +305,7 @@ Przyjrzyj się definicji powyżej. Typ obiektu to `Pipeline`. Dalej defniujesz n
 <img src="../images/Tkt_16.png" width="40%">
 
 4. W następnym kroku należy stworzyć obiekt `PipelineRun`, który analogicznie jak `TaskRun` wykonuje `Pipeline`. Otwórz edytor i stwórz nowy plik o nazwie `rozmowa-pipeline-run.yaml`.
-5. Wklej definicje `PipelineRun`:
+5. Wklej definicję `PipelineRun`:
 
 ```yaml
 apiVersion: tekton.dev/v1beta1
@@ -327,7 +327,7 @@ spec:
 
 <img src="../images/Tkt_21.png" width="70%">
 
-8. Wszystkie zadania wtkonały w odpowiedniej sekwencji i zakończyły sukcesem. Przejdź do zakładki `Logs`.
+8. Wszystkie zadania wykonały się w odpowiedniej sekwencji i zakończyły sukcesem. Przejdź do zakładki `Logs`.
 
 <img src="../images/Tkt_22.png" width="70%">
 
