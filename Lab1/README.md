@@ -252,13 +252,14 @@ Oto pełna specyfikacja wdrożenia zgodna z wcześniej opisanymi zmianami:
         - `Selector` opisuje szczegóły `pods` które będą obsługiwać `deployment`. Atrybut `matchLabels` z wartością `app: httpd` oznacza, że ta instancja `deployment` będzie wyszukiwać i zarządzać wszystkimi podami, których etykiety zawierają `app: httpd`.
     - Pole `replicas: 2` określa liczbę instancji do uruchomienia.
     - Sekcja `template` zawiera informacje w jaki sposób uruchomić kontener i utworzyć `pods`:
-        - Sekcja `labels` jakie etykiety mają zostać dodane do tworzonych `pods`. Zwróć uwagę, że etykiety te pasują do etykiet zdefiniowanych w sekcji selector. `selector`.
-        - Sekcja `containers` określa, skąd pobrać obraz kontenera oraz które porty mają zostać wystawione. W naszym przypadku obraz to `openshift/httpd`.
+        - Sekcja `labels` jakie etykiety mają zostać dodane do tworzonych `pods`. 
+        Zwróć uwagę, że etykiety te pasują do etykiet zdefiniowanych w sekcji selector `selector`.
+        - Sekcja `containers` określa, skąd pobrać obraz kontenera, oraz które porty mają zostać wystawione. W naszym przypadku obraz to `openshift/httpd`.
     - Sekcja `stratey` określa, w jaki sposób tworzyć, aktualizować lub przywracać różne wersje aplikacji. 
         - Strategia `RollingUpdate` jest ustawiona jako domyślna. Pozwala na aktualizację zestawu podów bez przestojów. Zastępuje pody działające na starej wersji aplikacji nowymi — jeden po drugim.
     <br/> 
  
-4. Zaczekaj aż oba pody zostaną uruchomione:
+4. Zaczekaj, aż oba pody zostaną uruchomione:
 
     ![Deployment After Create](../images/DeploymentAfterCreate.jpg)
 
@@ -282,7 +283,7 @@ Dlatego zakładka `Pods` znajduje się w zasobie `deployment`, który właśnie 
 
     <br/> 
 
-7. Przejżyj zakładki (**tabs**) dostępne dla Twojego poda.
+7. Przejżyj **zakładki** dostępne dla Twojego poda.
 
     ![Create Service](../images/ExplorePod.jpg)
 
@@ -290,7 +291,8 @@ Dlatego zakładka `Pods` znajduje się w zasobie `deployment`, który właśnie 
 
      - **`Detils:`** wyświetla wysokopoziomowe szczegóły dotyczące poda.
      - **`Metrics:`** wyświetla ogólne zużycie zasobów przez Twój pod. 
-     wróć uwagę, że jednostką zużycia CPU jest m (mili-core), co oznacza jedną tysięczną rdzenia procesora.
+     
+     Zwróć uwagę, że jednostką zużycia CPU jest m (mili-core), co oznacza jedną tysięczną rdzenia procesora.
      - **`YAML:`** przeanalizuj plik YAML, który opisuje Twój pod. Ten YAML został wygenerowany automatycznie przez kontroler wdrożenia (Deployment Controller) na podstawie specyfikacji, którą podałeś w definicji Deployment.
      - **`Environment:`** wyświetla zmienne środowiskowe zdefiniowane dla Twojego poda. Dla poda `httpd` nie ma żadnego.
      - **`Logs:`** wyświetla logi konsoli (console log) Twojego kontenera. 
