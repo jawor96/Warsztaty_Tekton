@@ -499,19 +499,18 @@ Trasa (route) udostępnia Twoje wewnętrzne punkty końcowe (endpoints) na zewn�
 
 
 
-## Deploy the exmample 'httd' image through the command line
+## Uruchomienie przykładowego obrazu 'httd' z linii poleceń
 
-You can use both `oc`, the openshift command line tool, or `kubectl`, the Kubernetes command line tool, to interact with Openshift. 
+Możesz używać zarówno `oc`, narzędzia wiersza poleceń OpenShift, jak i `kubectl`, narzędzia wiersza poleceń Kubernetes, aby wchodzić w interakcję z OpenShift.
 
-Resources in Openshift are configured via REST data structure. 
-For the command line tools, the REST data structure may be stored either in  a YAML file, or in a JSON file.
+Zasoby w OpenShift są konfigurowane za pomocą struktury danych REST.
+Dla narzędzi wiersza poleceń struktura ta może być przechowywana w pliku YAML lub JSON.
 
-The command line tools may be used to:
-
-- List available resources
-- Create resources
-- Update existing resources
-- Delete resources
+Narzędzia wiersza poleceń mogą być używane do:
+	•	Wyświetlania dostępnych zasobów
+	•	Tworzenia zasobów
+	•	Aktualizowania istniejących zasobów
+	•	Usuwania zasobów
 
 
 ###  Termial Linii Poleceń (Command Line Terminal)
