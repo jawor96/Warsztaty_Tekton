@@ -291,7 +291,6 @@ Dlatego zakładka `Pods` znajduje się w zasobie `deployment`, który właśnie 
 
      - **`Detils:`** wyświetla wysokopoziomowe szczegóły dotyczące poda.
      - **`Metrics:`** wyświetla ogólne zużycie zasobów przez Twój pod. 
-     
      Zwróć uwagę, że jednostką zużycia CPU jest m (mili-core), co oznacza jedną tysięczną rdzenia procesora.
      - **`YAML:`** przeanalizuj plik YAML, który opisuje Twój pod. Ten YAML został wygenerowany automatycznie przez kontroler wdrożenia (Deployment Controller) na podstawie specyfikacji, którą podałeś w definicji Deployment.
      - **`Environment:`** wyświetla zmienne środowiskowe zdefiniowane dla Twojego poda. Dla poda `httpd` nie ma żadnego.
