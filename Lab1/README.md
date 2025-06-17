@@ -689,7 +689,7 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
 
     Wynik: 
    
-        Teraz korzystasz z projektu "project1" na serwerze "https://api.ocp.ibm.edu:6443".
+         Now using project "project1" on server "https://api.ocp.ibm.edu:6443".
 
 7. Wyświetl specyfikację REST projektu:
    ```
@@ -728,9 +728,9 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
 
 ### Pierwsza Aplikacja
 
-#### Pierwszy Deployment
+#### Pierwsze wdrożenie (deployment)
 
-1. W oknie terminala, w katalogu, w którym sklonowałeś repozytorium z materiałami do labów `(/home/techzone/appmod-pot-labfiles/labs/IntroOpenshift)`, znajdź `Deployment.yaml`, który wykorzystasz do deploymentu aplikacji `httpd` przy użyciu OpenShift CLI.   
+1. W oknie terminal, w katalogu, w którym sklonowałeś repozytorium z materiałami do ćwiczeń `(/home/techzone/appmod-pot-labfiles/labs/IntroOpenshift)`, znajdź plik `Deployment.yaml`, który wykorzystasz do deploymentu aplikacji `httpd` przy użyciu OpenShift CLI.   
 
         cd /home/techzone/appmod-pot-labfiles/labs/IntroOpenshift
 
@@ -751,7 +751,7 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
      cat Deployment.yaml
      ```
 
-     To pozwala nam wdrożyć ten sam obraz w innym projekcie. Używanie tego samego obrazu dostosowanego do różnych środowisk to ważna koncepcja, która zostanie szerzej omówiona w kolejnych laboratoriach.
+    Pozwala nam to wdrożyć ten sam obraz w dowolnym projekcie. Używanie tego samego obrazu dostosowanego do różnych środowisk to ważna koncepcja, która zostanie szerzej omówiona w kolejnych laboratoriach.
 
 
      ```yaml
@@ -793,7 +793,7 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
     oc apply -f Deployment.yaml
     ```
 
-    Po zastosowaniu pliku YAML zobaczysz komunikat, że zasób deployment został utworzony.
+    Po zastosowaniu pliku YAML zobaczysz komunikat, że zasób wrożenie (deployment) został utworzony.
 
     ```
     deployment.apps/example created
@@ -805,7 +805,7 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
     oc get deployment example -o wide
     ```
 
-    Powinny być 2 z 2 podów ze statusem READY: 
+    Na liście powinny być 2 z 2 podów ze statusem READY: 
 
     ```
     NAME      READY   UP-TO-DATE   AVAILABLE   AGE    CONTAINERS IMAGES                                                                    SELECTOR
@@ -836,7 +836,7 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
    **Uwaga:** `\<pod name\>` to nazwa poda uzyskana z polecenia `oc get pods` w poprzednim kroku. 
 
  
-7. Przejrzyj plik `Service.yaml`  i zauważ, że jest przypisany do przestrzeni nazw `project1`:
+7. Przejrzyj plik `Service.yaml`  i zwróć uwagę, że jest przypisany do przestrzeni nazw `project1`:
 
     ```
     clear
@@ -862,7 +862,7 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
       type: ClusterIP
     ```
 
-    Zauważ, że **selector** jest ustawwiony na  **app: httd** , co oznacza, że usługa będzie równoważyć obciążenie pomiędzy podami z etykietą app `app: httpd` w przestrzeni nazw `project1`: 
+    Zauważ, że **selector** jest ustawwiony na  **app: httd**, co oznacza, że usługa będzie równoważyć obciążenie pomiędzy podami z etykietą app `app: httpd` w przestrzeni nazw `project1`: 
 
 8. Utwórz usługę. 
     
@@ -876,14 +876,15 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
     service/example created
     ```
 
-9. Przejrzyj plik Route.yaml:
+9. Wyświetl plik Route.yaml:
     ```
     clear
     
     cat Route.yaml
     ```
    
-   Zwróć uwagę, że trasa kieruje ruch do usługi **exmple**  
+   Zwróć uwagę, że trasa kieruje ruch do usługi **exmple**.
+
     Wynik:
    
     ```yaml
@@ -912,7 +913,7 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
     route.route.openshift.io/example created
     ```
 
-11. Użyj poniższego polecenia, aby uzyskać adres URL trasy (route). Następnie otwórz ten adres URL w przeglądarce na maszynie wirtualnej (VM): 
+11. Użyj poniższego polecenia, aby uzyskać adres URL trasy (route). Następnie otwórz ten adres URL w przeglądarce na maszynie wirtualnej: 
    
     ```
     echo http://$(oc get route example --template='{{ .spec.host }}')
@@ -928,7 +929,7 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
     ![firstapplication1](../images/httpdApp.png)
 
 
-### Zmiana Replica Instance
+### Zmiana Instancji Repliki (Replica Instance)
 
 1. Wyświetl pody: `oc get pods`
 
@@ -944,8 +945,11 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
     pod "example-764854fb5-lhdm7" deleted
     ```
 
-3. onownie wyświetl listę podów i zauważ, że została utworzona nowa instancja, zgodnie z oczekiwaniami. W specyfikacji wdrożenia określono 2 instancje, więc kontroler stara się utrzymać ich liczbę na poziomie 2: `oc get pods`
+3. Ponownie wyświetl listę podów i zwróć uwagę, że zgodnie z oczekiwaniami została utworzona nowa instancja. W specyfikacji wdrożenia określono 2 instancje, więc kontroler stara się utrzymać ich liczbę na poziomie 2:
 
+```
+ `oc get pods`
+```
   **Uwaga:** Nowy pod został automatycznie uruchomiony.
 
     ```
