@@ -1065,7 +1065,7 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
 
 <br/>
 
-Gratulacje, wdrożyłeś swoją pierwszą aplikację do OpenShift za pomocą linii poleceń!
+Gratulacje, wdrożyłeś swoją pierwszą aplikację w OpenShift za pomocą linii poleceń!
 
 
 KONIEC LABORATORIUM
