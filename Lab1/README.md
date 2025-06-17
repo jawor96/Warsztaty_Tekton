@@ -960,7 +960,7 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
 
 4. Aby zmienić liczbę podów, możesz zaktualizować (patchować) zasób na jeden z dwóch sposobów:
    
-     - Sposób ze skryptowaną aktualizacją przy użyciu opcji patch w wierszu poleceń: To polecenie zmniejsza liczbę podów do 1. 
+     - Sposób ze skryptowaną aktualizacją przy użyciu opcji patch w wierszu poleceń - polecenie zmniejsza liczbę podów do 1. 
       
 	     ```
          oc patch deployment example -p '{ "spec": { "replicas": 1 } }'
@@ -1001,18 +1001,18 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
     ```
 
 
-     **Uwaga:** Powyższe edytuje kopię przechowywaną w Openshift. Możesz również edytować swoją lokalną kopię pliku  `Deployment.yaml` i ponownie ją zastosować.
+     **Uwaga:** Powyższe działanie edytuje kopię przechowywaną w Openshift. Możesz również edytować swoją lokalną kopię pliku  `Deployment.yaml` i ponownie ją zastosować.
 
       <br/>
 
 
-6. Zedytuj plik `Deployment.yaml` na maszynie wirtualnej, i ponownie zastosuj zmiany.
+6. Zedytuj plik `Deployment.yaml` na maszynie wirtualnej i ponownie zastosuj zmiany.
 
-    a. Z okna `Terminal`, przejdź do katalogu gdzie znajudje się plik `Deployment.yaml`
+    a. Z okna `Terminal`, przejdź do katalogu gdzie znajduje się plik `Deployment.yaml`
 
         cd  /home/techzone/appmod-pot-labfiles/labs/IntroOpenshift
 
-    b. Użyj gedit, aby zedytować plik `Deployment.yaml`
+    b. Użyj gedit, aby zedytować plik `Deployment.yaml`.
 
         gedit ./Deployment.yaml
 
@@ -1029,7 +1029,7 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
 
         deployment.apps/example configured
         
-7. Ponownie wyświetl listę podów, aby zobaczyć, że teraz uruchomione są `3` pody.
+7. Wyświetl listę podów, aby zobaczyć, czy są teraz uruchomione `3` pody.
 
     ```
     oc get pods
@@ -1061,10 +1061,11 @@ Niektóre zasoby są globalne (nie są przypisane do przestrzeni nazw), podczas 
     No resources found in project1 namespace.
     ```
    
-   **Uwaga:** Może być konieczne kilkukrotne wykonanie polecenia **oc get pods** , aby poczekać na usunięcie wszystkich podów.
+   **Uwaga:** Może być konieczne kilkukrotne wykonanie polecenia **oc get pods**, aby poczekać na usunięcie wszystkich podów.
 
 <br/>
 
-Gratulacje, wdrożyłeś swoją pierwszą aplikację do OpenShift za pomocą linii poleceń.
+Gratulacje, wdrożyłeś swoją pierwszą aplikację do OpenShift za pomocą linii poleceń!
+
 
 KONIEC LABORATORIUM
