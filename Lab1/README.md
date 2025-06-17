@@ -144,14 +144,14 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
     - **`Nodes`** (węzły) reprezentują fizyczny lub wirtualny sprzęt, na którym działa Twój klaster OpenShift.
     - **`Pods`** (pody) służą do hostowania i uruchamiania jednego lub więcej kontenerów. Każdy węzeł może uruchamiać wiele podów. Kontenery w tym samym podzie współdzielą tę samą sieć i przestrzeń dyskową.
     - **`Storage classes`** (klasy pamięci masowej) reprezentują różne typy pamięci skonfigurowanej i udostępnionej klastrowi OpenShift.
-    - **`Persistent Volume Claims`** (PVCs, Żądania trwałej pamięci) oznaczają wykorzystanie pamięci przez pody. Po usunięciu poda dane, które nie zostały zapisane w trwałej pamięci zostaną utracone.
+    - **`Persistent Volume Claims`** (PVCs, żądania pamięci trwałej) oznaczają wykorzystanie pamięci przez pody. Po usunięciu poda dane, które nie zostały zapisane w trwałej pamięci zostaną utracone.
 
 ### Projekty - Projects
 
 Projekty Openshift (`projects`) umożliwiają grupowanie powiązanych zasobów oraz przypisywanie im odrębnych zasad zarządzania. 
-Często artefakty związane z różnymi aplikacjami są przypisywane do różnych `projektów`. Zasoby należące do tego samego projektu są przechowywane w tej samej przestrzeni nazw (`namespace`) Kubernetes.
+Często artefakty związane z różnymi aplikacjami są przypisywane do różnych `projektów`. Zasoby należące do tego samego projektu są przechowywane w tej samej przestrzeni nazw Kubernetes (`namespace`).
 
-1. Kliknij w zakładkę **`Projects`** znajdującą się w menu **`Home`** po lewej stronie, a następnie **`Create Project`**:
+1. Kliknij w zakładkę **`Projects`** znajdującą się w menu **`Home`** po lewej stronie, a następnie **`Create Project`** (uwtórz projekt):
 
     ![projects1](../images/projects1.png)
 
@@ -163,12 +163,12 @@ Często artefakty związane z różnymi aplikacjami są przypisywane do różnyc
 
 	 <br/>
 	 
-3. Po utworzeniu kliknij każdą z kart projektu. 
+3. Gdy projekt zostanie utworzony, kliknij każdą z kart projektu. 
 
    Zwróć uwagę na następujące elementy:
 
-    - Karta `YAML` pokazuje reprezentację projektu w formacie YAML. Każdy zasób w OpenShift jest reprezentowany jako struktura danych REST. Będziemy często pracować z plikami YAML podczas interakcji z OpenShift za pomocą wiersza poleceń.
-    - Zakładka `Role Bindings` (Powiązania Ról) okazuje konfiguracje zabezpieczeń przypisane do Twojego projektu. Na razie zwróć uwagę, że po utworzeniu projektu automatycznie zdefiniowanych jest wiele różnych ról. Każda z tych ról (**roles**) pełni inną funkcję i jest już przypisana do określonych użytkowników (**users**), grup (**groups**) lub kont serwisowych (**service accounts**).
+    - Karta `YAML` pokazuje reprezentację projektu w formacie YAML. Każdy zasób w OpenShift jest reprezentowany jako struktura danych REST. Będziemy często pracować z plikami YAML za pomocą wiersza poleceń podczas interakcji z OpenShift.
+    - Zakładka `Role Bindings` (powiązania ról) zawiera konfiguracje zabezpieczeń przypisane do Twojego projektu. Zwróć uwagę, że po utworzeniu projektu automatycznie zdefiniowanych jest wiele różnych ról. Każda z tych ról (**roles**) pełni inną funkcję i jest już przypisana do określonych użytkowników (**users**), grup (**groups**) lub kont usług (**service accounts**).
 
    ![MyprojectAfterCreate](../images/MyprojectAftercreate.jpg)
 
