@@ -11,7 +11,7 @@
 W tym laboratorium przedstawimy podstawy orkiestracji kontenerów przy wykorzystaniu OpenShift. Omówimy: 
 
 - podstawową nawigację za pomocą konsoli webowej,
-- uruchomienie przykładowego obrazu 'httpd' z konsoli webowej,
+- uruchamianie przykładowego obrazu 'httpd' z konsoli webowej,
 - deployment przykładowego obrazu 'httpd' z linii poleceń.
 
 ## Dostęp do środowiska
@@ -22,7 +22,7 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
 
 1.  Dostań się do środowiska laboratoryjnego przez przeglądarkę internetową. 
      
-    `Środowisko Laboratoryjne` jest skonfigurowane tak, aby zapewnić dostęp do maszyny wirtualnej **`stacji roboczej`** poprzez interfejs noVNC.
+    `Środowisko Laboratoryjne` jest skonfigurowane tak, aby zapewnić dostęp do maszyny wirtualnej (**`stacji roboczej`**) poprzez interfejs noVNC.
     
     a. Otwórz link otrzymany przez instruktora w przeglądarce internetowej. 
 
@@ -54,7 +54,7 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
 
      - Password: **IBMDem0s!**
 
-     > Uwaga: W haśle jest numeryczne zero: passw0rd  
+     > Uwaga: W haśle jest numeryczne zero: IBMDem0s!
 
    <br>
  
@@ -63,10 +63,10 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
    <br>
 
 <details>
- <summary><b><font color="dodgerblue">Kliknij, aby otworzyć:</font></b> Wskazówki dotyczące pracy w środowisku laboratoryjnym
+ <summary><b><font color="dodgerblue">Kliknij, aby otworzyć:</font></b> Wskazówki dotyczące pracy w środowisku laboratoryjnym.
  </summary>
 
-1. Możesz zmienić rozmiar okna maszyny VM, korzystając z opcji **ustawień noVNC**. Aby dopasować rozmiar pulpitu wirtualnego do ekranu:
+1. Możesz zmienić rozmiar okna maszyny wirtualnej, korzystając z opcji **ustawień noVNC**. Aby dopasować rozmiar pulpitu wirtualnego do ekranu:
 
     a. Z poziomu środowiska VM kliknij **strzałkę** w panelu sterowania noNC, aby otworzyć menu.  
 
@@ -123,26 +123,26 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
 
 ### Overview - Informacje ogólne
 
-1. Kliknij kartę **`Overview`** znajdującą się pod sekcją **`Home`** w menu po lewej stronie, aby wyświetlić podsumowanie zdarzeń:
+1. Kliknij kartę **`Overview`** (Przegląd) znajdującą się pod sekcją **`Home`** w menu po lewej stronie, aby wyświetlić podsumowanie zdarzeń:
 
     ![Overview1](../images/overview1.png)
 
 	 <br/>
 
-2. Przewiń w dół, aby wyświetlić zasoby `Cluster utilization`:
+2. Przewiń w dół, aby wyświetlić zasoby `Cluster utilization` (Wykorzystanie klastra):
 
     ![Overview2](../images/overview2.png)
 
      <br/>
 
-3. Wyświetl informacje o zasobach klastra `Cluster inventory` na stronie Przegląd (Overview). Możesz kliknąć każdy element z listy, aby dowiedzieć się więcej:
+3. Wyświetl informacje o zasobach klastra `Cluster inventory` na stronie Overview. Możesz kliknąć każdy element z listy, aby dowiedzieć się więcej:
 
     ![Overview3](../images/overview3.png)
 
     Zwróć uwagę, że:
 
-    - **`Nodes`** reprezentują fizyczny lub wirtualny sprzęt, na którym działa Twój klaster OpenShift.
-    - **`Pods`** służą do hostowania i uruchamiania jednego lub więcej kontenerów. Każdy węzeł może uruchamiać wiele podów. Kontenery w tym samym podzie współdzielą tę samą sieć i przestrzeń dyskową.
+    - **`Nodes`** (węzły) reprezentują fizyczny lub wirtualny sprzęt, na którym działa Twój klaster OpenShift.
+    - **`Pods`** (pody) służą do hostowania i uruchamiania jednego lub więcej kontenerów. Każdy węzeł może uruchamiać wiele podów. Kontenery w tym samym podzie współdzielą tę samą sieć i przestrzeń dyskową.
     - **`Storage classes`** (klasy pamięci masowej) reprezentują różne typy pamięci skonfigurowanej i udostępnionej klastrowi OpenShift.
     - **`Persistent Volume Claims`** (PVCs, Żądania trwałej pamięci) oznaczają wykorzystanie pamięci przez pody. Po usunięciu poda dane, które nie zostały zapisane w trwałej pamięci zostaną utracone.
 
