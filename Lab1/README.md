@@ -507,13 +507,9 @@ Zasoby w OpenShift są konfigurowane za pomocą struktury danych REST.
 Dla narzędzi wiersza poleceń struktura ta może być przechowywana w pliku YAML lub JSON.
 
 Narzędzia wiersza poleceń mogą być używane do:
-
 	•	Wyświetlania dostępnych zasobów
-
 	•	Tworzenia zasobów
-
 	•	Aktualizowania istniejących zasobów
-  
 	•	Usuwania zasobów
 
 
