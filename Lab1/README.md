@@ -135,7 +135,7 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
 
      <br/>
 
-3. Wyświetl informacje o zasobach klastra `Cluster inventory` na stronie Overview. Możesz kliknąć każdy element z listy, aby dowiedzieć się więcej:
+3. Wyświetl informacje o zasobach klastra `Cluster inventory` na stronie Overview. Możesz kliknąć każdy z elementów na liście, aby dowiedzieć się więcej:
 
     ![Overview3](../images/overview3.png)
 
@@ -151,7 +151,7 @@ Jeśli wykonujesz to laboratorium w ramach warsztatu prowadzonego przez instrukt
 Projekty Openshift (`projects`) umożliwiają grupowanie powiązanych zasobów oraz przypisywanie im odrębnych zasad zarządzania. 
 Często artefakty związane z różnymi aplikacjami są przypisywane do różnych `projektów`. Zasoby należące do tego samego projektu są przechowywane w tej samej przestrzeni nazw Kubernetes (`namespace`).
 
-1. Kliknij w zakładkę **`Projects`** znajdującą się w menu **`Home`** po lewej stronie, a następnie **`Create Project`** (uwtórz projekt):
+1. Kliknij w zakładkę **`Projects`** znajdującą się w menu **`Home`** po lewej stronie, a następnie  w przycik **`Create Project`** (uwtórz projekt):
 
     ![projects1](../images/projects1.png)
 
@@ -163,7 +163,7 @@ Często artefakty związane z różnymi aplikacjami są przypisywane do różnyc
 
 	 <br/>
 	 
-3. Gdy projekt zostanie utworzony, kliknij każdą z kart projektu. 
+3. Gdy projekt zostanie utworzony, otwórz każdą z kart projektu. 
 
    Zwróć uwagę na następujące elementy:
 
@@ -183,9 +183,9 @@ Typowe artefakty potrzebne do uruchomienia aplikacji w OpenShift to:
 
     ![Typcal Deployment](../images/TypicalDeployment.jpg)
 
-#### Pierwszy deployment 
+#### Pierwsze wrdożenie (deployment) 
 
-1. W zakładce **`Workloads`** kliknij **`Deployments`**. Następnie wybierz **`Create Deployment`**:
+1. W zakładce **`Workloads`** (obciążenia) kliknij **`Deployments`** (wdrożenia). Następnie wybierz **`Create Deployment`**:
 
     ![Create Deployment](../images/CreateDeployment.jpg)
 
@@ -193,7 +193,8 @@ Typowe artefakty potrzebne do uruchomienia aplikacji w OpenShift to:
 
 2. Zwróć uwagę, że konsola wyświetla plik YAML dla wdrożenia.
 
-Wprowadź następujące zmiany do pliku YAML, zgodnie z opisem i ilustracją poniżej:
+Wprowadź zmiany do pliku YAML, zgodnie z opisem i ilustracją poniżej:
+
   a. Wpisz `'example' ` jako **'name'** (nazwę) deploymentu. Upewnij się, że zachowujesz pojedyncze cudzysłowy ', jak pokazano poniżej.
     
   b. Zmień liczbę `replicas` (replik) z 3 na **`2`** 
