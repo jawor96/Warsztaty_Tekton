@@ -179,7 +179,7 @@ Typowe artefakty potrzebne do uruchomienia aplikacji w OpenShift to:
 - Jeden lub więcej podów (`pods`), które określają, skąd pobrać obraz i jak go uruchomić.
 - Wdrożenie (`deployment`), które kontroluje liczbę instancji podów. Zazwyczaj nie konfiguruje się poda bezpośrednio — zamiast tego definiuje się deployment, który zarządza zestawem podów.
 - Usługa (`service`), która udostępnia aplikację w wewnętrznej sieci i umożliwia równoważenie obciążenia aplikacji w klastrze OpenShift.
-- Trasa (`route`) lub `ingress`, które odpowiadają za to, że aplikacja staje się dostępna spoza zapory klastra OpenShift.
+- Trasa (`route`) lub `ingress`, które odpowiadają za to, aby aplikacja była dostępna poza zaporą klastra OpenShift.
 
     ![Typcal Deployment](../images/TypicalDeployment.jpg)
 
