@@ -197,15 +197,15 @@ Wprowadź zmiany do pliku YAML, zgodnie z opisem i ilustracją poniżej:
 
   a. Wpisz `'example' ` jako **'name'** (nazwę) deploymentu. Upewnij się, że zachowujesz pojedyncze cudzysłowy ', jak pokazano poniżej.
     
-  b. Zmień liczbę `replicas` (replik) z 3 na **`2`** 
+  b. Zmień liczbę `replicas` (replik) z 3 na **`2`**. 
 
-  c. Zmień  **'app: name'** na `app: httpd` zarówno dla 'matchLabels' jak i 'labels' 
+  c. Zmień  **'app: name'** na `app: httpd` zarówno dla 'matchLabels' jak i 'labels'. 
     
-  d. Kliknij przycisk **`Create`**:
+  d. Kliknij przycisk **`Create`**.
 
 ![Deployment Replicas](../images/DeploymentReplicas.jpg)
 
-Oto pełna specyfikacja wdrożenia (deployment) zgodna z wcześniej opisanymi zmianami:
+Oto pełna specyfikacja wdrożenia zgodna z wcześniej opisanymi zmianami:
 
     ```yaml
     apiVersion: apps/v1
@@ -244,12 +244,12 @@ Oto pełna specyfikacja wdrożenia (deployment) zgodna z wcześniej opisanymi zm
         - Grupą jest `apps`
         - Wersja to `v1`
         - Typ to `Deployment`
-    - `metadata` określa, które pody będzie obsługiwać to wdrożenie:
+    - `metadata` określa, które pody będzie obsługiwać dane wdrożenie:
         - Nazwa instancji to `example`
-        - Przestrzeń nazw (namespace), w której działa zasób `myproject`
+        - Przestrzeń nazw (namespace), w której działa zasób to `myproject`
         - Nie zostały jeszcze wyświetlone etykiety (labels), które zostaną użyte później
-    - Sekcja `spec` określa, które pody będzie obsługiwać to wdrożenie:
-        - `Selector` opisuje szczegóły `pods` które będą obsługiwać `deployment`. The `matchLabels` attribute with value `app: httpd` means this `deployment` instance will search for and manage all pods whose labels contain `app: httpd`.
+    - Sekcja `spec` określa, które pody będzie obsługiwać wdrożenie:
+        - `Selector` opisuje szczegóły `pods` które będą obsługiwać `deployment`. Atrybut `matchLabels` z wartością `app: httpd` oznacza, że ta instancja `deployment` będzie wyszukiwać i zarządzać wszystkimi podami, których etykiety zawierają `app: httpd`.
     - Pole `replicas: 2` określa liczbę instancji do uruchomienia.
     - Sekcja `template` zawiera informacje w jaki sposób uruchomić kontener i utworzyć `pods`:
         - Sekcja `labels` jakie etykiety mają zostać dodane do tworzonych `pods`. Zwróć uwagę, że etykiety te pasują do etykiet zdefiniowanych w sekcji selector. `selector`.
