@@ -299,11 +299,11 @@ Dlatego zakładka `Pods` znajduje się w zasobie `deployment`, który właśnie 
      - **`Terminal:`** otwiera zdalną powłokę (shell) w Twoim kontenerze. Podobnie jak w laboratorium „Wprowadzenie do Dockera”, powłoka nie jest dostępna w tym obrazie kontenera. Zwiększa to bezpieczeństwo, ale jednocześnie utrudnia debugowanie.
 
 
-### Pierwszy Serwis (Service)
+### Pierwsza Usługa (Service)
 
-Serwis (**`service`**) umolżliwia równoważenie obciążenia pomiędzy podami, które zostały właśnie utorzone w obrębie klastra Openshift.
+Usługa (**`service`**) umolżliwia równoważenie obciążenia pomiędzy podami, które zostały właśnie utorzone w obrębie klastra Openshift.
 
-1. Przewiń w dół do zakładki **`Networking`** (sieci) w lewym menu nawigacyjnym, kliknij **`Services`** (Usługi), a następnie **`Create Service`** (utwórz usługę):
+1. Przewiń w dół do zakładki **`Networking`** (sieci) w lewym menu nawigacyjnym, kliknij **`Services`** (usługi), a następnie **`Create Service`** (utwórz usługę):
 
     ![Create Service](../images/CreateService.jpg)
 
@@ -329,7 +329,7 @@ Serwis (**`service`**) umolżliwia równoważenie obciążenia pomiędzy podami,
     
 	<br/>
 	
-	c. Kliknij `Create`
+	c. Kliknij `Create`.
 
     **(Po aktualizacji)**
 
@@ -390,12 +390,12 @@ Serwis (**`service`**) umolżliwia równoważenie obciążenia pomiędzy podami,
       loadBalancer: {}
     ```
 
-4. Zwróć uwagę, że dla tej usługi została utworzona adresacja IP obowiązująca w całym klastrze (cluster-wide IP address) oraz że usługa ta jest ma load balancing.
+4. Zwróć uwagę, że dla tej usługi została utworzona adresacja IP obowiązująca w całym klastrze (cluster-wide IP address), oraz że usługa ma ustawiony load balancing.
 Dodatkowo, nie ustawiono session affinity dla tej usługi.
 
-### Pierwszy route (trasa)
+### Pierwsza trasa (route)
 
-Trasa (Route) udostępnia Twoje wewnętrzne punkty końcowe (endpoints) na zewnątrz klastra, omijając jego wbudowaną zaporę sieciową (firewall).
+Trasa (route) udostępnia Twoje wewnętrzne punkty końcowe (endpoints) na zewnątrz klastra, omijając jego wbudowaną zaporę sieciową (firewall).
 
 1. Kliknij zakładkę **`Route`** wewnątrz **`Networking`** w menu po lewej stronie, a następnie **`Create Route`**:
 
@@ -414,10 +414,10 @@ Trasa (Route) udostępnia Twoje wewnętrzne punkty końcowe (endpoints) na zewn�
 
     ![Create Route Parameters](../images/CreateRouteParams.jpg)
 
-    Zwróć uwagę, że na potrzeby tego laboratorium pomijamy konfigurację TLS. Kwestie związane z bezpieczeństwem zostaną omówione w innym laboratorium.
+    Zwróć uwagę, że na potrzeby tego laboratorium pomijamy konfigurację TLS. Kwestie związane z bezpieczeństwem zostaną omówione w oddzielnym laboratorium.
     <br/>
 
-3. Uzyskaj dostęp do trasy (Route), klikając link podany w polu `Location` zasobu Route. Adres trasy otworzy się w nowej karcie przeglądarki.
+3. Uzyskaj dostęp do trasy (route), klikając w link podany w polu `Location` zasobu Route. Adres trasy zostanie otworzony w nowej karcie przeglądarki.
 
     ![Create Route](../images/CreateRouteAccessRoute.jpg)
 
@@ -429,7 +429,7 @@ Trasa (Route) udostępnia Twoje wewnętrzne punkty końcowe (endpoints) na zewn�
 
 <br/>
 
-**Gratulacje**, właśnie uruchomiłeś swoją pierwszą aplikację korzystając z Openshift.
+**Gratulacje**, właśnie uruchomiłeś swoją pierwszą aplikację korzystając z Openshift!
 
 <br/>
 
@@ -445,7 +445,7 @@ Trasa (Route) udostępnia Twoje wewnętrzne punkty końcowe (endpoints) na zewn�
 
     <br/>
 
-3. Przewiń w dół do sekcji `Inventory`, aby zobaczyć utworzone zasoby. Przypomnij sobie, że utworzyliśmy jeden deployment ze specyfikacją zawierającą 2 pods. Utworzyliśmy także jedną service oraz jedną route.
+3. Przewiń w dół do sekcji `Inventory`, aby zobaczyć utworzone zasoby. Przypomnij sobie, że utworzyliśmy jeden deployment ze specyfikacją zawierającą 2 pody. Utworzyliśmy także jedną usługę (service) oraz jedną trasę (route).
 
     ![Locate Myproject Resoruces](../images/LocateMyprojectResources.png)
 
@@ -457,11 +457,11 @@ Trasa (Route) udostępnia Twoje wewnętrzne punkty końcowe (endpoints) na zewn�
 
      <br/>
 
-5. Usuń jeden z pods, klikając ikonę menu po prawej stronie, a następnie wybierając `Delete pod`.  Gdy pojawi się monit, kliknij `Delete`.
+5. Usuń jeden z podów, klikając ikonę menu po prawej stronie, a następnie wybierając `Delete pod`.  Gdy pojawi się monit, kliknij w `Delete`.
 
     ![Delete Pod](../images/DeletePod.png)
 
-    a. Kliknij `Delete` aby potwierdzić usunięcie poda 
+    a. Kliknij `Delete` aby potwierdzić usunięcie poda. 
 
     ![Delete Pod](../images/confirmDeletePod.png)
 
@@ -469,14 +469,14 @@ Trasa (Route) udostępnia Twoje wewnętrzne punkty końcowe (endpoints) na zewn�
     To nie jest właściwy sposób na zmniejszenie liczby instancji. Zauważysz, że zaraz po tym, jak jeden z podów zostanie usunięty, zostaje automatycznie utworzony nowy.
     
     Dzieje się tak dlatego, że kontroler zasobu `deployment` wie, że w specyfikacji zadeklarowano **2 instances**, trzyma się tej liczby, tworząc nową instancję w miejsce usuniętej.
-    To mechanizm, który zapewnia automatyczne odzyskiwanie po awarii, jeśli któryś z podów samoczynnie ulegnie awarii.
+    To mechanizm, który zapewnia automatyczne odzyskiwanie po awarii, jeśli któryś z podów ulegnie awarii.
 
     ![Delete Pod](../images/DeletePodRecreate.png)
 
  
     <br/>
 
-6. Aby zmienić liczbę instancji, musisz zmodyfikować specyfikację swojego deployment. Kliknij zakładkę  **`Deployments`** w sekcji **`Workloads`** w lewym menu nawigacyjnym, a następnie kliknij `example`:
+6. Aby zmienić liczbę instancji, musisz zmodyfikować specyfikację swojego wdrożenia (deployment). Kliknij zakładkę  **`Deployments`** w sekcji **`Workloads`** w lewym menu nawigacyjnym, a następnie kliknij `example`:
 
     ![Locate Deloyment](../images/LocateDeployment.png)
 
@@ -488,11 +488,11 @@ Trasa (Route) udostępnia Twoje wewnętrzne punkty końcowe (endpoints) na zewn�
 
     <br/>
 
-8. Kiedy operacja się zakończy kliknij w zakładkę **`YAML`**:
+8. Kiedy operacja się zakończy, kliknij w zakładkę **`YAML`**:
 
     ![Reduce Deployment](../images/DeploymentReducePod1.png)
 
-    Zwróć uwagę, że konsola automatycznie zmieniła specyfikację REST w Twoim imieniu, tak że liczba replicas wynosi teraz 1.
+    Zwróć uwagę, że konsola automatycznie zmieniła specyfikację REST w Twoim imieniu, tak że liczba  **`replicas`** wynosi teraz 1.
 
 
     ![Reduce Deployment YAML](../images/DeploymentReducePod1YAML.png)
