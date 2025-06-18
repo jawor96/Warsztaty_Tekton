@@ -13,8 +13,8 @@ Dostęp do środowiska będzie przekazany przez prowadzących.
 
 ## Kontakt
 
-Mikołaj Jaworski<br/>
-
+Mikołaj Jaworski
+<br/>
 E-mail: mikolaj.jaworski2@ibm.com
 <br/>
 Mikołaj Jaworski<br/>
