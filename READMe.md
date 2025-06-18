@@ -16,7 +16,7 @@ Dostęp do środowiska będzie przekazany przez prowadzących.
 Mikołaj Jaworski
 <br/>
 E-mail: mikolaj.jaworski2@ibm.com
-<br/>
+<br/><br/>
 Rafał Sitarz
 <br/>
 E-mail: rafal.sitarz@ibm.com
