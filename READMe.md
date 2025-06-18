@@ -13,12 +13,12 @@ Dostęp do środowiska będzie przekazany przez prowadzących.
 
 ## Kontakt
 
-Mikołaj Jaworski
+Mikołaj Jaworski<br/>
 
 E-mail: mikolaj.jaworski2@ibm.com
 
 <br/>
-Rafał Sitarz
+Rafał Sitarz<br/>
 
 E-mail: rafal.sitarz@ibm.com
 
