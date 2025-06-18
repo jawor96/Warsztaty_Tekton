@@ -17,6 +17,6 @@ Mikołaj Jaworski
 <br/>
 E-mail: mikolaj.jaworski2@ibm.com
 <br/>
-Mikołaj Jaworski<br/>
-
-E-mail: mikolaj.jaworski2@ibm.com
+Rafał Sitarz
+<br/>
+E-mail: rafal.sitarz@ibm.com
